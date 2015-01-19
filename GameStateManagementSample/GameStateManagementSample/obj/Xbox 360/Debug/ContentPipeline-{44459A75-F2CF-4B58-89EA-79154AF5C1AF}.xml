@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>background.png</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\background.xnb</Output>
+      <Time>2015-01-03T17:57:42.9374978+08:00</Time>
+    </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\blank.xnb</Output>
+      <Time>2015-01-03T17:57:42.9384979+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gradient.png</Source>
+      <Name>gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\gradient.xnb</Output>
+      <Time>2015-01-03T17:57:42.940498+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap.jpg</Source>
+      <Name>Ship_Texmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap.xnb</Output>
+      <Time>2015-01-03T18:02:40.5933044+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap1.jpg</Source>
+      <Name>Ship_Texmap1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap1.xnb</Output>
+      <Time>2015-01-03T18:02:40.6893099+08:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\menufont.xnb</Output>
+      <Time>2015-01-03T17:57:42.940498+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gamefont.spritefont</Source>
+      <Name>gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\gamefont.xnb</Output>
+      <Time>2015-01-05T11:11:50.6916099+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Name>Ground</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ground.xnb</Output>
+      <Time>2015-01-03T17:57:42.8954954+08:00</Time>
+      <Dependency>
+        <Key>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Ground_0.xml</Key>
+        <Value>2015-01-08T09:21:43.8788052+08:00</Value>
+      </Dependency>
+      <Request>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Ship.fbx</Source>
+      <Name>Ship</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship.xnb</Output>
+      <Time>2015-01-03T17:57:42.9284973+08:00</Time>
+      <Dependency>
+        <Key>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Ship_0.xml</Key>
+        <Value>2015-01-08T09:21:44.503841+08:00</Value>
+      </Dependency>
+      <Request>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\ShipDiffuse_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>cube.FBX</Source>
+      <Name>cube</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\cube.xnb</Output>
+      <Time>2015-01-03T17:57:42.9394979+08:00</Time>
+      <Dependency>
+        <Key>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\cube_0.xml</Key>
+        <Value>2015-01-08T09:21:44.678851+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Cone.FBX</Source>
+      <Name>Cone</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Cone.xnb</Output>
+      <Time>2015-01-03T18:02:40.5903043+08:00</Time>
+      <Dependency>
+        <Key>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Cone_0.xml</Key>
+        <Value>2015-01-08T09:21:44.7098528+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>SpaceShip.FBX</Source>
+      <Name>SpaceShip</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\SpaceShip.xnb</Output>
+      <Time>2015-01-03T18:02:40.69031+08:00</Time>
+      <Dependency>
+        <Key>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\SpaceShip_0.xml</Key>
+        <Value>2015-01-08T09:21:44.7498551+08:00</Value>
+      </Dependency>
+      <Request>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>PewpewSFX.wav</Source>
+      <Name>PewpewSFX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\PewpewSFX.xnb</Output>
+      <Time>2015-01-05T11:11:50.6886097+08:00</Time>
+    </Item>
+    <Item>
+      <Source>CrashSFX.wav</Source>
+      <Name>CrashSFX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\CrashSFX.xnb</Output>
+      <Time>2015-01-07T10:47:08.1761569+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Ground_0.xml</Output>
+      <Time>2015-01-03T17:57:42.8954954+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Checker.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb</Output>
+      <Time>2015-01-03T17:57:42.8944954+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Ship_0.xml</Output>
+      <Time>2015-01-03T17:57:42.9284973+08:00</Time>
+    </Item>
+    <Item>
+      <Source>ShipDiffuse.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\ShipDiffuse_0.xnb</Output>
+      <Time>2015-01-03T17:57:42.9354977+08:00</Time>
+    </Item>
+    <Item>
+      <Source>cube.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\cube_0.xml</Output>
+      <Time>2015-01-03T17:57:42.9394979+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Cone.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Cone_0.xml</Output>
+      <Time>2015-01-03T18:02:40.5903043+08:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceShip.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\SpaceShip_0.xml</Output>
+      <Time>2015-01-03T18:02:40.69031+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap_0.xnb</Output>
+      <Time>2015-01-03T18:02:40.5933044+08:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{44459A75-F2CF-4B58-89EA-79154AF5C1AF}</ContentProjectGUID>
+      <TargetPlatform>Xbox360</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>D:\Work\GameStateManagementSample\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\GameStateManagementSample\GameStateManagementSample\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-04-28T12:27:35.5375778+08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

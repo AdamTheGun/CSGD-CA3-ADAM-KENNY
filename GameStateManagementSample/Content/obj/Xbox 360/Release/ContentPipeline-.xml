@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>background.png</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\background.xnb</Output>
+      <Time>2015-01-08T00:40:11.7008022+08:00</Time>
+    </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\blank.xnb</Output>
+      <Time>2015-01-08T00:40:11.7008022+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gradient.png</Source>
+      <Name>gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\gradient.xnb</Output>
+      <Time>2015-01-08T00:40:11.7018023+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap.jpg</Source>
+      <Name>Ship_Texmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship_Texmap.xnb</Output>
+      <Time>2015-01-08T00:40:11.6377986+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap1.jpg</Source>
+      <Name>Ship_Texmap1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship_Texmap1.xnb</Output>
+      <Time>2015-01-12T11:41:17.1311131+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox0.jpg</Source>
+      <Name>skybox0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\skybox0.xnb</Output>
+      <Time>2015-01-12T18:38:44.0884634+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox1.jpg</Source>
+      <Name>skybox1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\skybox1.xnb</Output>
+      <Time>2015-01-12T18:38:56.6858608+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox2.jpg</Source>
+      <Name>skybox2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\skybox2.xnb</Output>
+      <Time>2015-01-12T18:39:13.4170161+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox3.jpg</Source>
+      <Name>skybox3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\skybox3.xnb</Output>
+      <Time>2015-01-12T18:39:24.6344926+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox4.jpg</Source>
+      <Name>skybox4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\skybox4.xnb</Output>
+      <Time>2015-01-12T18:39:34.4130116+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox5.jpg</Source>
+      <Name>skybox5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\skybox5.xnb</Output>
+      <Time>2015-01-12T18:39:49.1348262+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Space_Texmap.jpg</Source>
+      <Name>Space_Texmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Space_Texmap.xnb</Output>
+      <Time>2015-01-11T11:06:20.1239768+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship1Screen.PNG</Source>
+      <Name>Ship1Screen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship1Screen.xnb</Output>
+      <Time>2015-01-11T20:39:54.1586057+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship2Screen.PNG</Source>
+      <Name>Ship2Screen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship2Screen.xnb</Output>
+      <Time>2015-01-11T20:40:28.595563+08:00</Time>
+    </Item>
+    <Item>
+      <Source>MainMenuScreen.jpg</Source>
+      <Name>MainMenuScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\MainMenuScreen.xnb</Output>
+      <Time>2015-01-11T19:26:31.3343894+08:00</Time>
+    </Item>
+    <Item>
+      <Source>CREDITS.png</Source>
+      <Name>CREDITS</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\CREDITS.xnb</Output>
+      <Time>2015-01-12T18:32:12.3723203+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Controls.jpg</Source>
+      <Name>Controls</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Controls.xnb</Output>
+      <Time>2015-01-12T18:43:37.86+08:00</Time>
+    </Item>
+    <Item>
+      <Source>A_Button.png</Source>
+      <Name>A_Button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\A_Button.xnb</Output>
+      <Time>2014-11-18T15:01:23.6258225+08:00</Time>
+    </Item>
+    <Item>
+      <Source>B_Button.png</Source>
+      <Name>B_Button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\B_Button.xnb</Output>
+      <Time>2014-11-18T15:01:39.0090672+08:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\menufont.xnb</Output>
+      <Time>2015-01-08T00:40:11.7018023+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gamefont.spritefont</Source>
+      <Name>gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\gamefont.xnb</Output>
+      <Time>2015-01-08T00:40:11.7018023+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Name>Ground</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ground.xnb</Output>
+      <Time>2015-01-08T00:40:11.6197976+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\Ground_0.xml</Key>
+        <Value>2015-01-15T10:22:50.2851138+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Checker_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>cube.FBX</Source>
+      <Name>cube</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\cube.xnb</Output>
+      <Time>2015-01-08T00:40:11.7018023+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\cube_0.xml</Key>
+        <Value>2015-01-15T10:22:50.4802436+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Cone.FBX</Source>
+      <Name>Cone</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Cone.xnb</Output>
+      <Time>2015-01-08T00:40:11.6197976+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\Cone_0.xml</Key>
+        <Value>2015-01-15T10:22:50.5322807+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>SpaceShip.FBX</Source>
+      <Name>SpaceShip</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\SpaceShip.xnb</Output>
+      <Time>2015-01-12T15:56:16.7335279+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\SpaceShip_0.xml</Key>
+        <Value>2015-01-15T10:22:50.6133326+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship_Texmap1_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>SpaceShip1.FBX</Source>
+      <Name>SpaceShip1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="DefaultEffect">EnvironmentMapEffect</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\SpaceShip1.xnb</Output>
+      <Time>2015-01-12T16:48:49.1801573+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\SpaceShip1_0.xml</Key>
+        <Value>2015-01-15T10:22:53.3811802+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship_Texmap_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>SpaceShip2.FBX</Source>
+      <Name>SpaceShip2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="DefaultEffect">EnvironmentMapEffect</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\SpaceShip2.xnb</Output>
+      <Time>2015-01-12T16:25:26.0417333+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\SpaceShip2_0.xml</Key>
+        <Value>2015-01-15T10:22:54.2107306+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship_Texmap1_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Space_SkyBox.FBX</Source>
+      <Name>Space_SkyBox</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Space_SkyBox.xnb</Output>
+      <Time>2015-01-11T11:06:20.109976+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\Space_SkyBox_0.xml</Key>
+        <Value>2015-01-15T10:22:54.2887832+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Space_Texmap_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Rock.FBX</Source>
+      <Name>Rock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Rock.xnb</Output>
+      <Time>2015-01-11T11:06:17.5608302+08:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\Rock_0.xml</Key>
+        <Value>2015-01-15T10:22:56.81947+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Rock_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>PewpewSFX.wav</Source>
+      <Name>PewpewSFX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\PewpewSFX.xnb</Output>
+      <Time>2015-01-08T00:40:11.6207976+08:00</Time>
+    </Item>
+    <Item>
+      <Source>CrashSFX.wav</Source>
+      <Name>CrashSFX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\CrashSFX.xnb</Output>
+      <Time>2015-01-08T00:41:18.0345963+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\Ground_0.xml</Output>
+      <Time>2015-01-08T00:40:11.6197976+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Checker.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Checker_0.xnb</Output>
+      <Time>2015-01-08T00:40:11.6197976+08:00</Time>
+    </Item>
+    <Item>
+      <Source>cube.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\cube_0.xml</Output>
+      <Time>2015-01-08T00:40:11.7018023+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Cone.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\Cone_0.xml</Output>
+      <Time>2015-01-08T00:40:11.6197976+08:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceShip.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\SpaceShip_0.xml</Output>
+      <Time>2015-01-12T15:56:16.7335279+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap1.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship_Texmap1_0.xnb</Output>
+      <Time>2015-01-12T11:41:17.1311131+08:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceShip1.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\SpaceShip1_0.xml</Output>
+      <Time>2015-01-12T16:48:49.1801573+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Ship_Texmap_0.xnb</Output>
+      <Time>2015-01-08T00:40:11.6377986+08:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceShip2.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\SpaceShip2_0.xml</Output>
+      <Time>2015-01-12T16:25:26.0417333+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Space_SkyBox.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\Space_SkyBox_0.xml</Output>
+      <Time>2015-01-11T11:06:20.109976+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Space_Texmap.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Space_Texmap_0.xnb</Output>
+      <Time>2015-01-11T11:06:20.1239768+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Rock.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\Rock_0.xml</Output>
+      <Time>2015-01-11T11:06:17.5608302+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Rock.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\Rock_0.xnb</Output>
+      <Time>2015-01-11T11:06:17.5618303+08:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID Null="true" />
+      <TargetPlatform>Xbox360</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\Content\obj\Xbox 360\Release\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Release\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-07-08T14:06:19.9502503+08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

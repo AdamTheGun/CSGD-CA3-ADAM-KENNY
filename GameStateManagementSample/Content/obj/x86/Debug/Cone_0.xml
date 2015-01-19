@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:MeshContent">
+    <Name>Cone001</Name>
+    <Identity>
+      <SourceFilename>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\Content\Cone.FBX</SourceFilename>
+      <SourceTool>FbxImporter</SourceTool>
+    </Identity>
+    <OpaqueData>
+      <Data Key="MaxHandle" Type="int">1</Data>
+    </OpaqueData>
+    <Transform>1.01481681E-16 -1.65732157 -1.01481681E-16 0 0 1.01481681E-16 -1.65732157 0 2.54 1.55530138E-16 9.523475E-33 0 0.338244855 0 0.00339005468 1</Transform>
+    <Positions>0 0 0 3.27222013 0 0 -1.4303329E-07 3.27222013 0 -3.27222013 -2.8606658E-07 0 3.90208328E-08 -3.27222013 0 0 0 28.8605652 -0 0 28.8605652 -0 -0 28.8605652 0 -0 28.8605652 0 0 28.8605652</Positions>
+    <Geometry>
+      <Batch>
+        <Indices>2 1 0 1 3 0 3 4 0 4 5 0 8 7 6 7 10 9 7 11 10 11 12 10 11 13 12 13 14 12 13 8 14 8 6 14 17 16 15 18 17 15 19 18 15 16 19 15</Indices>
+        <Vertices>
+          <PositionIndices>0 2 1 3 4 1 1 6 5 1 2 7 3 8 4 9 5 6 7 8</PositionIndices>
+          <Channels>
+            <VertexChannel Name="Normal0" ElementType="Framework:Vector3">0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0.993633747 0 0.112658516 0.7048452 0.7048452 0.0799155757 0.7048452 -0.7048452 0.07991557 0.993633747 0 0.112658516 -5.635344E-08 0.993633747 0.112658523 -0.7048452 0.70484513 0.07991557 -0.993633747 -5.635344E-08 0.112658523 -0.70484513 -0.7048452 0.07991557 0 -0.993633747 0.112658516 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0</VertexChannel>
+            <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.5 1 3.79454939E-08 1 -0.25 1 0.25000003 1 0.5 1 0.75 1 0.75 1 0.5 0 0.5 0 -0.25 1 3.79454939E-08 1 0.5 0 0.25000003 1 0.5 0 0.5 1 0.5 0 0.5 0 0.5 0 0.5 0 0.5 0</VertexChannel>
+          </Channels>
+        </Vertices>
+      </Batch>
+    </Geometry>
+  </Asset>
+</XnaContent>

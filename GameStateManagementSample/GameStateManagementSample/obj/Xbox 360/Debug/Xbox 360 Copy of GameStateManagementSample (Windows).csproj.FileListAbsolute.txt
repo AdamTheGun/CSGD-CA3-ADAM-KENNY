@@ -1,0 +1,56 @@
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\background.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\blank.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\gradient.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap1.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\menufont.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\gamefont.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ground.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\cube.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Cone.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\SpaceShip.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\PewpewSFX.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\CrashSFX.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\ShipDiffuse_0.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap_0.xnb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Sounds.xgs
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\WaveBank.xwb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\SoundBank.xsb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.exe
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.pdb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.dll
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.pdb
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Xbox 360 Copy of GameStateManagementSample (Windows).csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.exe
+C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.pdb
+D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Xbox 360 Copy of GameStateManagementSample (Windows).csprojResolveAssemblyReference.cache
+D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.exe
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\background.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\blank.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\gradient.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap1.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\menufont.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\gamefont.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ground.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\cube.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Cone.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\SpaceShip.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\PewpewSFX.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\CrashSFX.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Checker_0.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\ShipDiffuse_0.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Ship_Texmap_0.xnb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\Sounds.xgs
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\WaveBank.xwb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\Content\SoundBank.xsb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.exe
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagementSample.pdb
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.dll
+D:\Work\GameStateManagementSample\GameStateManagementSample\bin\Xbox 360\Debug\GameStateManagement.pdb
+D:\Work\GameStateManagementSample\GameStateManagementSample\obj\Xbox 360\Debug\GameStateManagementSample.pdb
