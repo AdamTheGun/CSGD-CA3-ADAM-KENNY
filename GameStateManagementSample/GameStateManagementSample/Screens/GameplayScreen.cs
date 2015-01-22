@@ -718,6 +718,9 @@ namespace GameStateManagementSample
                 foreach (ModelMeshPart mmp in mm.MeshParts)
                 {
                     be.EnableDefaultLighting();
+                    be.DiffuseColor = new Vector3(1, 1, 1);
+                    be.EmissiveColor = new Vector3(1, 1, 1);
+                    be.EnvironmentMapSpecular = new Vector3(0.05f, 0.05f, 0.05f);
                     be.View = camera.View;
                     be.Projection = camera.Projection;
                     be.World = world;
@@ -729,28 +732,28 @@ namespace GameStateManagementSample
                         mmp.NumVertices, mmp.StartIndex, mmp.PrimitiveCount);
                 }
 
-                foreach (Effect effect in mm.Effects)
-                {
-                    if ((effect is BasicEffect) == false)
-                        continue;
+                //foreach (Effect effect in mm.Effects)
+                //{
+                //    if ((effect is BasicEffect) == false)
+                //        continue;
 
-                    BasicEffect basicEffect = (BasicEffect)effect;
+                //    BasicEffect basicEffect = (BasicEffect)effect;
 
-                    //effect.SpecularColor = Color.WhiteSmoke.ToVector3();
-                    ///effect.SpecularPower = 100.0f;
-                    //effect.FogEnabled = true;
-                    //effect.FogColor = Color.White.ToVector3();
-                    //effect.FogStart = 999999.0f;
-                    //effect.FogEnd = 1000000.0f;
-                    basicEffect.EnableDefaultLighting();
-                    basicEffect.DiffuseColor = new Vector3(1, 0, 0);
-                    basicEffect.World = transforms[mm.ParentBone.Index] * world;
-                    // Use the matrices provided by the chase camera
-                    basicEffect.View = camera.View;
-                    basicEffect.Projection = camera.Projection;
-                }
+                //    //effect.SpecularColor = Color.WhiteSmoke.ToVector3();
+                //    ///effect.SpecularPower = 100.0f;
+                //    //effect.FogEnabled = true;
+                //    //effect.FogColor = Color.White.ToVector3();
+                //    //effect.FogStart = 999999.0f;
+                //    //effect.FogEnd = 1000000.0f;
+                //    basicEffect.EnableDefaultLighting();
+                //    basicEffect.DiffuseColor = new Vector3(1, 0, 0);
+                //    basicEffect.World = transforms[mm.ParentBone.Index] * world;
+                //    // Use the matrices provided by the chase camera
+                //    basicEffect.View = camera.View;
+                //    basicEffect.Projection = camera.Projection;
+                //}
 
-                mm.Draw();
+                //mm.Draw();
             }
         }
 
@@ -770,6 +773,7 @@ namespace GameStateManagementSample
                     //effect.FogStart = 999999.0f;
                     //effect.FogEnd = 1000000.0f;
                     effect.EnableDefaultLighting();
+                    effect.DiffuseColor = new Vector3(0.7f, 0.7f, 0.7f);
                     effect.World = transforms[mesh.ParentBone.Index] * world;
                     // Use the matrices provided by the chase camera
                     effect.View = camera.View;
