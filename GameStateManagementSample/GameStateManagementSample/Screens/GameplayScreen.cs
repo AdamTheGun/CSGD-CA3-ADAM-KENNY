@@ -17,10 +17,15 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using GameStateManagement;
 using ChaseCameraSample;
+using BloomPostprocess;
 #endregion
 
 namespace GameStateManagementSample
 {
+    // NOTE TO DEVELOPERS
+    // BOTTOM VIEWPORT USES CAMERA
+    // TOP VIEWPORT USES CAMERA2
+
     /// <summary>
     /// This screen implements the actual game logic. It is just a
     /// placeholder to get the idea across: you'll probably want to
@@ -32,6 +37,8 @@ namespace GameStateManagementSample
 
         ContentManager content;
         SpriteFont gameFont;
+
+        BloomComponent bloom;
 
         KeyboardState lastKeyboardState = new KeyboardState();
         GamePadState lastGamePadState1 = new GamePadState();
@@ -258,7 +265,19 @@ namespace GameStateManagementSample
                 camera.Reset();
                 camera2.Reset();
 
+                // Spawn rocks around the map
+                // Will not spawn within 500 pixels around players' ships
                 RandomRockSpawner();
+
+                // Enable Bloom
+                // Orlando Bloom
+                bloom = new BloomComponent(ScreenManager.Game);
+                ScreenManager.Game.Components.Add(bloom);
+
+                // Modify bloom
+                bloom.Settings = BloomSettings.PresetSettings[2];
+                bloom.Visible = true;
+
                 // A real game would probably have more content than this sample, so
                 // it would take longer to load. We simulate that by delaying for a
                 // while, giving you a chance to admire the beautiful loading screen.
@@ -527,6 +546,9 @@ namespace GameStateManagementSample
 
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
 
+            #region Bottom Screen
+            bloom.BeginDraw();
+
             ScreenManager.GraphicsDevice.Viewport = bottomViewport;
 
             ScreenManager.GraphicsDevice.BlendState = BlendState.Opaque;
@@ -537,6 +559,7 @@ namespace GameStateManagementSample
             {
                 DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera);
             }
+
             for (int i = 0; i < ship.bullets.Length; i++)
             {
                 if (ship.bullets[i].isAlive)
@@ -544,6 +567,7 @@ namespace GameStateManagementSample
                     DrawModel(bulletModel, Matrix.CreateScale(10) * Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * ship.bullets[i].World, camera);
                 }
             }
+
             for (int i = 0; i < ship2.bullets.Length; i++)
             {
                 if (ship2.bullets[i].isAlive)
@@ -551,6 +575,7 @@ namespace GameStateManagementSample
                     DrawModel(bulletModel, Matrix.CreateScale(10) * Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * ship2.bullets[i].World, camera);
                 }
             }
+
             if (ScreenManager.shipChosenbool2 == false)         
             {
                 DrawModel(shipModel2, Matrix.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix.CreateRotationZ(MathHelper.ToRadians(-90.0f)) * Matrix.CreateScale(25) * ship2.World, envEffect2, camera);
@@ -576,8 +601,10 @@ namespace GameStateManagementSample
                 }
 
             }
-            //DrawModel(shipModel, Matrix.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix.CreateScale(10) * ship2.World, camera);
+
             DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera);
+
+            //DrawModel(shipModel, Matrix.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix.CreateScale(10) * ship2.World, camera);
             //DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.Identity, camera);
             // DrawModel(groundModel, Matrix.Identity, camera);
             //DrawModel(shipModel, Matrix.CreateTranslation(50, 50, 100) * Matrix.CreateScale(10));
@@ -596,6 +623,10 @@ namespace GameStateManagementSample
 
                 ScreenManager.FadeBackBufferToBlack(alpha);
             }
+            #endregion
+
+            #region Top Screen
+            bloom.BeginDraw();
 
             ScreenManager.GraphicsDevice.Viewport = topViewport;
             
@@ -610,10 +641,12 @@ namespace GameStateManagementSample
                     DrawModel(bulletModel, Matrix.CreateScale(10) * Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * ship.bullets[i].World, camera2);
                 }
             }
+
             for (int i = 0; i < rockPos.Length; i++)
             {
                 DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera2);
             }
+
             for (int i = 0; i < ship2.bullets.Length; i++)
             {
                 if (ship2.bullets[i].isAlive)
@@ -621,6 +654,7 @@ namespace GameStateManagementSample
                     DrawModel(bulletModel, Matrix.CreateScale(10) * Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * ship2.bullets[i].World, camera2);
                 }
             }
+
             if (ScreenManager.shipChosenbool1 == false)
             {
                 DrawModel(shipModel2, Matrix.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix.CreateRotationZ(MathHelper.ToRadians(-90.0f)) * Matrix.CreateScale(25) * ship.World, envEffect2, camera2);
@@ -645,7 +679,9 @@ namespace GameStateManagementSample
                     DrawModel(shipModel2, Matrix.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix.CreateRotationZ(MathHelper.ToRadians(-90.0f)) * Matrix.CreateScale(25) * ship2.World, envEffect2, camera2);
                 }
             }
+
             DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera2);
+
             //DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.Identity, camera2);
             //DrawModel(groundModel, Matrix.Identity, camera2);
             //DrawModel(shipModel, Matrix.CreateTranslation(50, 50, 100) * Matrix.CreateScale(10));
@@ -666,14 +702,22 @@ namespace GameStateManagementSample
 
                 ScreenManager.FadeBackBufferToBlack(alpha);
             }
+            #endregion
+
+            bloom.ShowBuffer = BloomComponent.IntermediateBuffer.FinalResult;
         }
 
-        private void DrawModel(Model m, Matrix world, EnvironmentMapEffect be, ChaseCamera camera)
+        private void DrawModel(Model model, Matrix world, EnvironmentMapEffect be, ChaseCamera camera)
         {
-            foreach (ModelMesh mm in m.Meshes)
+            Matrix[] transforms = new Matrix[model.Bones.Count];
+            model.CopyAbsoluteBoneTransformsTo(transforms);
+
+            foreach (ModelMesh mm in model.Meshes)
             {
+
                 foreach (ModelMeshPart mmp in mm.MeshParts)
                 {
+                    be.EnableDefaultLighting();
                     be.View = camera.View;
                     be.Projection = camera.Projection;
                     be.World = world;
@@ -684,6 +728,29 @@ namespace GameStateManagementSample
                         PrimitiveType.TriangleList, 0, 0,
                         mmp.NumVertices, mmp.StartIndex, mmp.PrimitiveCount);
                 }
+
+                foreach (Effect effect in mm.Effects)
+                {
+                    if ((effect is BasicEffect) == false)
+                        continue;
+
+                    BasicEffect basicEffect = (BasicEffect)effect;
+
+                    //effect.SpecularColor = Color.WhiteSmoke.ToVector3();
+                    ///effect.SpecularPower = 100.0f;
+                    //effect.FogEnabled = true;
+                    //effect.FogColor = Color.White.ToVector3();
+                    //effect.FogStart = 999999.0f;
+                    //effect.FogEnd = 1000000.0f;
+                    basicEffect.EnableDefaultLighting();
+                    basicEffect.DiffuseColor = new Vector3(1, 0, 0);
+                    basicEffect.World = transforms[mm.ParentBone.Index] * world;
+                    // Use the matrices provided by the chase camera
+                    basicEffect.View = camera.View;
+                    basicEffect.Projection = camera.Projection;
+                }
+
+                mm.Draw();
             }
         }
 
@@ -711,6 +778,7 @@ namespace GameStateManagementSample
                 mesh.Draw();
             }
         }
+
         private void RandomRockSpawner()
         {
             for (int i = 0; i < rockPos.Length; i++)

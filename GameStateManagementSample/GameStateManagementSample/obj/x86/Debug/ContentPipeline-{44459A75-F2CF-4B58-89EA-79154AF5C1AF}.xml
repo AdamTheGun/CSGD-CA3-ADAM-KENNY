@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>background.png</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2015-01-19T17:35:04.6710714+08:00</Time>
+    </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2015-01-19T17:35:04.6710714+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gradient.png</Source>
+      <Name>gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\gradient.xnb</Output>
+      <Time>2015-01-19T17:35:04.6720715+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap.jpg</Source>
+      <Name>Ship_Texmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap.xnb</Output>
+      <Time>2015-01-19T17:35:03.0789803+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap1.jpg</Source>
+      <Name>Ship_Texmap1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap1.xnb</Output>
+      <Time>2015-01-19T17:35:03.2289889+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox0.jpg</Source>
+      <Name>skybox0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\skybox0.xnb</Output>
+      <Time>2015-01-19T17:35:04.8290804+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox1.jpg</Source>
+      <Name>skybox1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\skybox1.xnb</Output>
+      <Time>2015-01-19T17:35:04.8300805+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox2.jpg</Source>
+      <Name>skybox2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\skybox2.xnb</Output>
+      <Time>2015-01-19T17:35:04.8310806+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox3.jpg</Source>
+      <Name>skybox3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\skybox3.xnb</Output>
+      <Time>2015-01-19T17:35:04.8310806+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox4.jpg</Source>
+      <Name>skybox4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\skybox4.xnb</Output>
+      <Time>2015-01-19T17:35:04.8320806+08:00</Time>
+    </Item>
+    <Item>
+      <Source>skybox5.jpg</Source>
+      <Name>skybox5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\skybox5.xnb</Output>
+      <Time>2015-01-19T17:35:04.8330807+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Space_Texmap.jpg</Source>
+      <Name>Space_Texmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Space_Texmap.xnb</Output>
+      <Time>2015-01-19T17:35:04.6700713+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship1Screen.PNG</Source>
+      <Name>Ship1Screen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship1Screen.xnb</Output>
+      <Time>2015-01-19T17:35:03.0519788+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship2Screen.PNG</Source>
+      <Name>Ship2Screen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship2Screen.xnb</Output>
+      <Time>2015-01-19T17:35:03.0539789+08:00</Time>
+    </Item>
+    <Item>
+      <Source>MainMenuScreen.jpg</Source>
+      <Name>MainMenuScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\MainMenuScreen.xnb</Output>
+      <Time>2015-01-19T17:35:03.0479786+08:00</Time>
+    </Item>
+    <Item>
+      <Source>CREDITS.png</Source>
+      <Name>CREDITS</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\CREDITS.xnb</Output>
+      <Time>2015-01-19T17:35:03.037978+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Controls.jpg</Source>
+      <Name>Controls</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Controls.xnb</Output>
+      <Time>2015-01-19T17:35:03.0409782+08:00</Time>
+    </Item>
+    <Item>
+      <Source>A_Button.png</Source>
+      <Name>A_Button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\A_Button.xnb</Output>
+      <Time>2015-01-19T17:35:03.0359779+08:00</Time>
+    </Item>
+    <Item>
+      <Source>B_Button.png</Source>
+      <Name>B_Button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\B_Button.xnb</Output>
+      <Time>2015-01-19T17:35:03.0369779+08:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2015-01-19T17:35:04.6720715+08:00</Time>
+    </Item>
+    <Item>
+      <Source>gamefont.spritefont</Source>
+      <Name>gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2015-01-19T17:35:04.6720715+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Name>Ground</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ground.xnb</Output>
+      <Time>2015-01-19T17:35:03.0449784+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Ground_0.xml</Key>
+        <Value>2015-01-22T09:56:56.5470495+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Checker_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>cube.FBX</Source>
+      <Name>cube</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\cube.xnb</Output>
+      <Time>2015-01-19T17:35:04.6720715+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\cube_0.xml</Key>
+        <Value>2015-01-22T09:56:56.7150558+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Cone.FBX</Source>
+      <Name>Cone</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Cone.xnb</Output>
+      <Time>2015-01-19T17:35:03.0389781+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Cone_0.xml</Key>
+        <Value>2015-01-22T09:56:56.7470576+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>SpaceShip.FBX</Source>
+      <Name>SpaceShip</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\SpaceShip.xnb</Output>
+      <Time>2015-01-19T17:35:04.6660711+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\SpaceShip_0.xml</Key>
+        <Value>2015-01-22T09:56:56.7980589+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap1_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>SpaceShip1.FBX</Source>
+      <Name>SpaceShip1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="DefaultEffect">EnvironmentMapEffect</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\SpaceShip1.xnb</Output>
+      <Time>2015-01-19T17:35:04.6670712+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\SpaceShip1_0.xml</Key>
+        <Value>2015-01-22T09:56:58.1161136+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>SpaceShip2.FBX</Source>
+      <Name>SpaceShip2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="DefaultEffect">EnvironmentMapEffect</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\SpaceShip2.xnb</Output>
+      <Time>2015-01-19T17:35:04.6670712+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\SpaceShip2_0.xml</Key>
+        <Value>2015-01-22T09:56:58.4781271+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap1_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Space_SkyBox.FBX</Source>
+      <Name>Space_SkyBox</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Space_SkyBox.xnb</Output>
+      <Time>2015-01-19T17:35:04.6680712+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Space_SkyBox_0.xml</Key>
+        <Value>2015-01-22T09:56:58.5091283+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Space_Texmap_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Rock.FBX</Source>
+      <Name>Rock</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Rock.xnb</Output>
+      <Time>2015-01-19T17:35:03.0489786+08:00</Time>
+      <Dependency>
+        <Key>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Rock_0.xml</Key>
+        <Value>2015-01-22T09:56:59.734171+08:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Rock_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>PewpewSFX.wav</Source>
+      <Name>PewpewSFX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\PewpewSFX.xnb</Output>
+      <Time>2015-01-19T17:35:03.0489786+08:00</Time>
+    </Item>
+    <Item>
+      <Source>CrashSFX.wav</Source>
+      <Name>CrashSFX</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\CrashSFX.xnb</Output>
+      <Time>2015-01-19T17:35:03.0439783+08:00</Time>
+    </Item>
+    <Item>
+      <Source>BloomCombine.fx</Source>
+      <Name>BloomCombine</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\BloomCombine.xnb</Output>
+      <Time>2010-09-15T11:23:06+08:00</Time>
+    </Item>
+    <Item>
+      <Source>BloomExtract.fx</Source>
+      <Name>BloomExtract</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\BloomExtract.xnb</Output>
+      <Time>2010-09-15T11:23:06+08:00</Time>
+    </Item>
+    <Item>
+      <Source>GaussianBlur.fx</Source>
+      <Name>GaussianBlur</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\GaussianBlur.xnb</Output>
+      <Time>2010-09-15T11:23:06+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ground.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Ground_0.xml</Output>
+      <Time>2015-01-19T17:35:03.0449784+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Checker.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Checker_0.xnb</Output>
+      <Time>2015-01-19T17:35:03.037978+08:00</Time>
+    </Item>
+    <Item>
+      <Source>cube.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\cube_0.xml</Output>
+      <Time>2015-01-19T17:35:04.6720715+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Cone.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Cone_0.xml</Output>
+      <Time>2015-01-19T17:35:03.0389781+08:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceShip.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\SpaceShip_0.xml</Output>
+      <Time>2015-01-19T17:35:04.6660711+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap1.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap1_0.xnb</Output>
+      <Time>2015-01-19T17:35:03.2289889+08:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceShip1.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\SpaceShip1_0.xml</Output>
+      <Time>2015-01-19T17:35:04.6670712+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Ship_Texmap.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap_0.xnb</Output>
+      <Time>2015-01-19T17:35:03.0789803+08:00</Time>
+    </Item>
+    <Item>
+      <Source>SpaceShip2.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\SpaceShip2_0.xml</Output>
+      <Time>2015-01-19T17:35:04.6670712+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Space_SkyBox.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Space_SkyBox_0.xml</Output>
+      <Time>2015-01-19T17:35:04.6680712+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Space_Texmap.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Space_Texmap_0.xnb</Output>
+      <Time>2015-01-19T17:35:04.6700713+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Rock.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\Rock_0.xml</Output>
+      <Time>2015-01-19T17:35:03.0489786+08:00</Time>
+    </Item>
+    <Item>
+      <Source>Rock.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Rock_0.xnb</Output>
+      <Time>2015-01-19T17:35:03.0499787+08:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{44459A75-F2CF-4B58-89EA-79154AF5C1AF}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-04-28T12:27:35.5375778+08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

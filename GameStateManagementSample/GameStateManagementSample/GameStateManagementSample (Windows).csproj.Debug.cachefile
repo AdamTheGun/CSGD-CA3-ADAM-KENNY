@@ -29,6 +29,9 @@ Content\Space_SkyBox.xnb
 Content\Rock.xnb
 Content\PewpewSFX.xnb
 Content\CrashSFX.xnb
+Content\BloomCombine.xnb
+Content\BloomExtract.xnb
+Content\GaussianBlur.xnb
 Content\Checker_0.xnb
 Content\Ship_Texmap1_0.xnb
 Content\Ship_Texmap_0.xnb

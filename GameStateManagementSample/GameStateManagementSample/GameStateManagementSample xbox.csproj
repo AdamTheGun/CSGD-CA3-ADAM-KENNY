@@ -63,6 +63,8 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BloomComponent.cs" />
+    <Compile Include="BloomSettings.cs" />
     <Compile Include="ChaseCamera.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />

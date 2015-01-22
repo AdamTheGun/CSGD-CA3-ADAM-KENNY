@@ -2,3 +2,4 @@ C:\Users\User\Desktop\GameStateManagementSample\Content\obj\x86\Debug\Content.co
 D:\Work\GameStateManagementSample\Content\obj\x86\Debug\Content.contentprojResolveAssemblyReference.cache
 C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\Content\obj\x86\Debug\Content.contentprojResolveAssemblyReference.cache
 C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA2\GameStateManagementSample\Content\obj\x86\Debug\Sounds.xml
+C:\Users\Kenny\Desktop\New folder\GameStateManagementSample\Content\obj\x86\Debug\Content.contentprojResolveAssemblyReference.cache
