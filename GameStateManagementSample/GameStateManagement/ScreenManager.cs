@@ -44,6 +44,7 @@ namespace GameStateManagement
         SoundBank soundBank;
         WaveBank waveBank;
         AudioCategory musicCategory;
+        AudioCategory sfxCategory;
 
         SpriteBatch spriteBatch;
         SpriteFont font;
@@ -202,7 +203,18 @@ namespace GameStateManagement
         {
             // we must set EnabledGestures before we can query for them, but
             // we don't assume the game wants to read them.
-            TouchPanel.EnabledGestures = GestureType.None;
+            audioEngine = new AudioEngine("Content\\Sounds.xgs");
+            soundBank = new SoundBank(audioEngine, "Content\\SoundBank.xsb");
+            waveBank = new WaveBank(audioEngine, "Content\\WaveBank.xwb", 0, 4);
+            while (!waveBank.IsPrepared)
+            {
+                audioEngine.Update();
+            }
+            musicCategory = audioEngine.GetCategory("Music");
+            musicCategory.SetVolume(1);
+            sfxCategory = audioEngine.GetCategory("SFX");
+            sfxCategory.SetVolume(sfxVolume);
+            
         }
 
 
@@ -213,6 +225,7 @@ namespace GameStateManagement
         {
             base.Initialize();
 
+            TouchPanel.EnabledGestures = GestureType.None;
             isInitialized = true;
         }
 
@@ -230,15 +243,6 @@ namespace GameStateManagement
             blankTexture = content.Load<Texture2D>("blank");
             screenInCounter = 0;
             originalViewport = GraphicsDevice.Viewport;
-            audioEngine = new AudioEngine("Content\\Sounds.xgs");
-            soundBank = new SoundBank(audioEngine, "Content\\SoundBank.xsb");
-            waveBank = new WaveBank(audioEngine, "Content\\WaveBank.xwb");
-            while(!waveBank.IsPrepared)
-            {
-                 audioEngine.Update();
-            }
-            musicCategory = audioEngine.GetCategory("Music");
-            musicCategory.SetVolume(1);
             shipchosenBool1 = false;
             shipchosenBool2 = false;
             currentShipChoosing = 1;
@@ -285,6 +289,7 @@ namespace GameStateManagement
             foreach (GameScreen screen in screens)
                 tempScreensList.Add(screen);
 
+            
             bool otherScreenHasFocus = !Game.IsActive;
             bool coveredByOtherScreen = false;
 
@@ -319,10 +324,18 @@ namespace GameStateManagement
             }
 
             if (audioEnabled == true)
+            {
                 musicCategory.SetVolume(audioVolume);
+                sfxCategory.SetVolume(sfxVolume);
+            }
             else
+            {
                 musicCategory.SetVolume(0);
+                sfxCategory.SetVolume(0);
+            }
+            
 
+            audioEngine.Update();
             // Print debug trace?
             if (traceEnabled)
                 TraceScreens();

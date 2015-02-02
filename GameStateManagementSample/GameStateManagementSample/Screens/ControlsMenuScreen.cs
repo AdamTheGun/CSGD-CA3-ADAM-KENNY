@@ -10,6 +10,7 @@
 #region Using Statements
 using Microsoft.Xna.Framework;
 using GameStateManagement;
+using Microsoft.Xna.Framework.Audio;
 #endregion
 
 namespace GameStateManagementSample
@@ -32,8 +33,8 @@ namespace GameStateManagementSample
         /// <summary>
         /// Constructor.
         /// </summary>
-        public ControlsMenuScreen()
-            : base("")
+        public ControlsMenuScreen(SoundBank soundbank)
+            : base("", soundbank)
         {
             MenuEntry back = new MenuEntry(string.Empty);
 
@@ -54,7 +55,7 @@ namespace GameStateManagementSample
         {
             ScreenManager.ScreenInCounter = 0;
             LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                           new MainMenuScreen());
+                                                           new MainMenuScreen(ScreenManager.SoundBank));
         }
         #endregion
     }

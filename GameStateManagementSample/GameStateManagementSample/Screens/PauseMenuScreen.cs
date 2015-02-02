@@ -26,8 +26,8 @@ namespace GameStateManagementSample
         /// <summary>
         /// Constructor.
         /// </summary>
-        public PauseMenuScreen()
-            : base("Paused")
+        public PauseMenuScreen(SoundBank soundbank)
+            : base("Paused",soundbank)
         {
             // Create our menu entries.
             MenuEntry resumeGameMenuEntry = new MenuEntry("Resume Game");
@@ -70,22 +70,17 @@ namespace GameStateManagementSample
         /// </summary>
         void ConfirmQuitMessageBoxAccepted(object sender, PlayerIndexEventArgs e)
         {
-            ResetViewports();
             ScreenManager.MusicCue.Stop(AudioStopOptions.Immediate);
             ScreenManager.MainMenu.Stop(AudioStopOptions.Immediate);
             ScreenManager.MainMenu = ScreenManager.SoundBank.GetCue("MainMenu");
             ScreenManager.MainMenu.Play();
-            LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                           new MainMenuScreen());
+            ScreenManager.ScreenInCounter = 0;
+                
+            LoadingScreen.Load(ScreenManager, false, ControllingPlayer, new BackgroundScreen(),
+                                                           new MainMenuScreen(ScreenManager.SoundBank));
+
         }
 
-        public void ResetViewports()
-        {
-           //Reset viewports
-           //HERE
-           //CHANGING SCREENMANAGER.GRAPHICS.VIEWPORT DOESNT WORK FOR SOME REASON
-            //5ScreenManager.GraphicsDevice.Viewport = new Microsoft.Xna.Framework.Graphics.Viewport(0, 0, 1280, 720);
-        }
 
         #endregion
     }

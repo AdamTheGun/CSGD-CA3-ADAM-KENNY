@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Input;
 using GameStateManagement;
+using Microsoft.Xna.Framework.Audio;
 #endregion
 
 namespace GameStateManagementSample
@@ -30,6 +31,8 @@ namespace GameStateManagementSample
         List<MenuEntry> menuEntries = new List<MenuEntry>();
         int selectedEntry = 0;
         string menuTitle;
+
+        SoundBank soundBank;
 
         InputAction menuUp;
         InputAction menuDown;
@@ -59,10 +62,10 @@ namespace GameStateManagementSample
         /// <summary>
         /// Constructor.
         /// </summary>
-        public MenuScreen(string menuTitle)
+        public MenuScreen(string menuTitle,SoundBank soundbank)
         {
             this.menuTitle = menuTitle;
-
+            soundBank = soundbank;
             TransitionOnTime = TimeSpan.FromSeconds(0.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
 
@@ -110,6 +113,8 @@ namespace GameStateManagementSample
 
                 if (selectedEntry < 0)
                     selectedEntry = menuEntries.Count - 1;
+
+                soundBank.GetCue("BrowseUISfx").Play();
             }
 
             // Move to the next menu entry?
@@ -119,10 +124,13 @@ namespace GameStateManagementSample
 
                 if (selectedEntry >= menuEntries.Count)
                     selectedEntry = 0;
+
+                soundBank.GetCue("BrowseUISfx").Play();
             }
 
             if (menuSelect.Evaluate(input, ControllingPlayer, out playerIndex))
             {
+                soundBank.GetCue("SelectUISfx").Play();
                 OnSelectEntry(selectedEntry, playerIndex);
             }
             else if (menuCancel.Evaluate(input, ControllingPlayer, out playerIndex))

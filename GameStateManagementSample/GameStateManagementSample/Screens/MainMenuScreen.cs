@@ -25,8 +25,8 @@ namespace GameStateManagementSample
         /// <summary>
         /// Constructor fills in the menu contents.
         /// </summary>
-        public MainMenuScreen()
-            : base("Shinygun")
+        public MainMenuScreen(SoundBank soundbank)
+            : base("Shinygun",soundbank)
         {
             // Create our menu entries.
             MenuEntry playGameMenuEntry = new MenuEntry("Play Game");
@@ -62,7 +62,7 @@ namespace GameStateManagementSample
         void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                           new CharacterMenuScreen());
+                                                           new CharacterMenuScreen(ScreenManager.SoundBank));
             ScreenManager.ScreenInCounter = 1;
         }
 
@@ -72,20 +72,20 @@ namespace GameStateManagementSample
         /// </summary>
         void OptionsMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            ScreenManager.AddScreen(new OptionsMenuScreen(), e.PlayerIndex);
+            ScreenManager.AddScreen(new OptionsMenuScreen(ScreenManager.SoundBank), e.PlayerIndex);
             ScreenManager.ScreenInCounter = 0;
         }
 
         void ControlsMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                           new ControlsMenuScreen());
+                                                           new ControlsMenuScreen(ScreenManager.SoundBank));
             ScreenManager.ScreenInCounter = 3;
         }
         void CreditsMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                           new CreditsMenuScreen());
+                                                           new CreditsMenuScreen(ScreenManager.SoundBank));
             ScreenManager.ScreenInCounter = 4;
         }
 

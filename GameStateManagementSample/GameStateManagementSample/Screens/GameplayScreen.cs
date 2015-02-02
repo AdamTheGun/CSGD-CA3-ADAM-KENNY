@@ -39,6 +39,8 @@ namespace GameStateManagementSample
         SpriteFont gameFont;
 
         BloomComponent bloom;
+        
+        int bloomSettingsIndex = 0;
 
         KeyboardState lastKeyboardState = new KeyboardState();
         GamePadState lastGamePadState1 = new GamePadState();
@@ -65,7 +67,7 @@ namespace GameStateManagementSample
         TextureCube textureCube2;
 
         Vector3 ship1Pos, ship2Pos;
-        Vector3[] rockPos = new Vector3[400];
+        Vector3[] rockPos = new Vector3[800];
 
         //AUDIO STUFF
         AudioEmitter shipEmit1, shipEmit2;
@@ -249,12 +251,12 @@ namespace GameStateManagementSample
                 }
 
                 FxCue = soundBank.GetCue("ShotFx");
-                //FxCue.Apply3D(shipListen1, shipEmit1);
+                ScreenManager.MusicCue = soundBank.GetCue("GameMusic");
 
                 ship1Pos = new Vector3(10000,350,10000);
                 ship2Pos = new Vector3(100, 350, 100);
 
-                // Create shiplllllllllllllllllllllllllllll
+                // Create ship
                 ship = new Ship(ScreenManager.GraphicsDevice,ship1Pos,soundBank,shipEmit1,shipEmit2,shipListen1);
                 ship2 = new Ship(ScreenManager.GraphicsDevice,ship2Pos,soundBank,shipEmit1,shipEmit2,shipListen1);
                 //ship2.Position = new Vector3(100, 100, 100);
@@ -275,7 +277,7 @@ namespace GameStateManagementSample
                 ScreenManager.Game.Components.Add(bloom);
 
                 // Modify bloom
-                bloom.Settings = BloomSettings.PresetSettings[2];
+                bloom.Settings = BloomSettings.PresetSettings[1];
                 bloom.Visible = true;
 
                 // A real game would probably have more content than this sample, so
@@ -390,11 +392,6 @@ namespace GameStateManagementSample
                             currentMouseState.X < ScreenManager.GraphicsDevice.Viewport.Width / 10 &&
                             currentMouseState.Y < ScreenManager.GraphicsDevice.Viewport.Height / 10;
 
-                    //TEST
-                    //shipEmit1.Position = ship.Position;
-                    //shipListen1.Position = camera.Position;
-
-
 #if Windows
                     // Pressing the A button or key toggles the spring behavior on and off
                     if (lastKeyboardState.IsKeyUp(Keys.A) &&
@@ -434,16 +431,17 @@ namespace GameStateManagementSample
 #endif
                 }
 
-                if (!musicPlaying)
-                {
-                    ScreenManager.MusicCue = soundBank.GetCue("GameMusic");
-                    ScreenManager.MusicCue.Play();
-                    musicPlaying = true;
-                }
                 if (!ScreenManager.MusicCue.IsPlaying)
                 {
                     musicPlaying = false;
                     ScreenManager.MusicCue.Stop(AudioStopOptions.Immediate);
+                }
+                if (!musicPlaying)
+                {
+                    ScreenManager.MusicCue = soundBank.GetCue("GameMusic");
+                    ScreenManager.MusicCue.Play();
+                    //ScreenManager.AudioEngine.Update();
+                    musicPlaying = true;
                 }
 
                 // Reset the ship on R key or right thumb stick clicked
@@ -482,10 +480,11 @@ namespace GameStateManagementSample
                     ScreenManager.MainMenu.Stop(AudioStopOptions.Immediate);
                     ScreenManager.MainMenu = ScreenManager.SoundBank.GetCue("WinMusic");
                     ScreenManager.MainMenu.Play();
-                    ScreenManager.AddScreen(new GameOverScreen(),PlayerIndex.One);
+                    ScreenManager.AddScreen(new GameOverScreen(ScreenManager.SoundBank), PlayerIndex.One);
                 }
 
             }
+            ScreenManager.AudioEngine.Update();
         }
 
 
@@ -517,14 +516,15 @@ namespace GameStateManagementSample
 #if WINDOWS_PHONE
                 ScreenManager.AddScreen(new PhonePauseScreen(), ControllingPlayer);
 #else
-                
-                ScreenManager.AddScreen(new PauseMenuScreen(), ControllingPlayer);
+
+                ScreenManager.AddScreen(new PauseMenuScreen(ScreenManager.SoundBank), ControllingPlayer);
 #endif
             }
             else
             {
-
+                
             }
+
         }
 
         private void UpdateCameraChaseTarget(Ship ships,ChaseCamera camera)
@@ -644,7 +644,8 @@ namespace GameStateManagementSample
 
             for (int i = 0; i < rockPos.Length; i++)
             {
-                DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera2);
+                if(Vector3.Distance(ship2Pos,rockPos[i])<10000000)
+                    DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera2);
             }
 
             for (int i = 0; i < ship2.bullets.Length; i++)
@@ -787,9 +788,9 @@ namespace GameStateManagementSample
         {
             for (int i = 0; i < rockPos.Length; i++)
             {
-                float randX = random.Next(-500000, 500000);
-                float randY = random.Next(-500000, 500000);
-                float randZ = random.Next(-500000, 500000);
+                float randX = random.Next(-1000000, 1000000);
+                float randY = random.Next(-1000000, 1000000);
+                float randZ = random.Next(-1000000, 1000000);
 
                 if (randX >= ship.Position.X - 500 && randX <= ship.Position.X)
                     randX -= 500;

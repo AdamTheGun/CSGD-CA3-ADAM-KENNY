@@ -10,6 +10,7 @@
 #region Using Statements
 using Microsoft.Xna.Framework;
 using GameStateManagement;
+using Microsoft.Xna.Framework.Audio;
 #endregion
 
 namespace GameStateManagementSample
@@ -36,8 +37,8 @@ namespace GameStateManagementSample
         /// <summary>
         /// Constructor.
         /// </summary>
-        public OptionsMenuScreen()
-            : base("Options")
+        public OptionsMenuScreen(SoundBank soundbank)
+            : base("Options",soundbank)
         {
             // Create our menu entries.
             enableAudioMenuEntry = new MenuEntry(string.Empty);
@@ -117,7 +118,7 @@ namespace GameStateManagementSample
 
             if (ScreenManager.SFXVolume >= 1.1f)
                 ScreenManager.SFXVolume = 0.0f;
-
+            
             SetMenuEntryText();
         }
 

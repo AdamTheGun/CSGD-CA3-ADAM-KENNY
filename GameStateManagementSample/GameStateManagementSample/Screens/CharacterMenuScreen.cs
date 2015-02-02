@@ -34,7 +34,8 @@ namespace GameStateManagementSample
         /// <summary>
         /// Constructor.
         /// </summary>
-        public CharacterMenuScreen(): base("Choose Your Ship")
+        public CharacterMenuScreen(SoundBank soundbank)
+            : base("Choose Your Ship", soundbank)
         {
             // Create our menu entries.
             shipMenuEntry = new MenuEntry(string.Empty);
@@ -44,7 +45,7 @@ namespace GameStateManagementSample
             // Hook up menu event handlers.
             shipMenuEntry.Selected += shipMenuEntrySelected;
             enterMenuEntry.Selected += enterMenuEntrySelected;
-            back.Selected += OnCancel;
+            back.Selected += backMenuEntrySelected;
             
             // Add entries to the menu.
             MenuEntries.Add(shipMenuEntry);
@@ -112,7 +113,7 @@ namespace GameStateManagementSample
             if (ScreenManager.CurrentShipChoosing == 1) 
             {
                 LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                          new CharacterMenuScreen());
+                                                          new CharacterMenuScreen(ScreenManager.SoundBank));
                 
                 ScreenManager.CurrentShipChoosing = 2;
             }
@@ -126,6 +127,17 @@ namespace GameStateManagementSample
                 ScreenManager.MainMenu.Stop(AudioStopOptions.Immediate);
             }
             SetMenuEntryText();
+        }
+
+        void backMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+        {
+            ScreenManager.ScreenInCounter = 0;
+            LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
+                                                           new MainMenuScreen(ScreenManager.SoundBank));
+            if (ScreenManager.CurrentShipChoosing == 2)
+            {
+                ScreenManager.CurrentShipChoosing = 1;
+            }
         }
 
         #endregion

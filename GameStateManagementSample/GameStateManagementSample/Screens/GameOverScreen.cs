@@ -27,8 +27,8 @@ namespace GameStateManagementSample
         /// <summary>
         /// Constructor.
         /// </summary>
-        public GameOverScreen()
-            : base("Game Over")
+        public GameOverScreen(SoundBank soundbank)
+            : base("Game Over",soundbank)
         {
             //IsFirstGame = true;
             // Create our menu entries.
@@ -78,7 +78,7 @@ namespace GameStateManagementSample
             ScreenManager.MainMenu = ScreenManager.SoundBank.GetCue("MainMenu");
             ScreenManager.MainMenu.Play();
             LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                           new MainMenuScreen());
+                                                           new MainMenuScreen(ScreenManager.SoundBank));
         }
 
         void OnRestart(object sender, PlayerIndexEventArgs e)
