@@ -183,7 +183,6 @@ namespace GameStateManagementSample
                 rockModel = content.Load<Model>("Rock");
                 shipModel = content.Load<Model>("SpaceShip1");
                 shipModel2 = content.Load<Model>("SpaceShip2");
-                groundModel = content.Load<Model>("Ground");
                 cubeModel = content.Load<Model>("cube");
                 bulletModel = content.Load<Model>("Cone");
                 skyBoxModel = content.Load<Model>("Space_SkyBox");

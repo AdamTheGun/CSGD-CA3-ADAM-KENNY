@@ -487,6 +487,15 @@
       <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA3\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Rock_0.xnb</Output>
       <Time>2015-01-11T11:06:17.5618303+08:00</Time>
     </Item>
+    <Item>
+      <Source>TitleFont.spritefont</Source>
+      <Name>TitleFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA3\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\TitleFont.xnb</Output>
+      <Time>2015-02-05T09:21:36.6392856+08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID Null="true" />
