@@ -429,7 +429,7 @@ namespace GameStateManagementSample
                     }
 #endif
                 }
-
+                ship.shipHealth = 0;
                 if (!ScreenManager.MusicCue.IsPlaying)
                 {
                     musicPlaying = false;
@@ -545,19 +545,15 @@ namespace GameStateManagementSample
 
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
 
-            #region Bottom Screen
             bloom.BeginDraw();
+            #region Bottom Screen
 
             ScreenManager.GraphicsDevice.Viewport = bottomViewport;
 
             ScreenManager.GraphicsDevice.BlendState = BlendState.Opaque;
             ScreenManager.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             ScreenManager.GraphicsDevice.SamplerStates[0] = SamplerState.LinearWrap;
-
-            for (int i = 0; i < rockPos.Length; i++)
-            {
-                DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera);
-            }
+            ScreenManager.GraphicsDevice.Clear(Color.Black);
 
             for (int i = 0; i < ship.bullets.Length; i++)
             {
@@ -601,31 +597,19 @@ namespace GameStateManagementSample
 
             }
 
+            ScreenManager.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            for (int i = 0; i < rockPos.Length; i++)
+            {
+                DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera);
+            }
+
             DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera);
 
-            //DrawModel(shipModel, Matrix.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix.CreateScale(10) * ship2.World, camera);
-            //DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.Identity, camera);
-            // DrawModel(groundModel, Matrix.Identity, camera);
-            //DrawModel(shipModel, Matrix.CreateTranslation(50, 50, 100) * Matrix.CreateScale(10));
 
-            spriteBatch.Begin();
 
-            spriteBatch.DrawString(gameFont, "Health : " + ship2.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
-            //spriteBatch.DrawString(gameFont, "Power  : " + (ship.bullets.Length - ship.currentBullet), new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width - 200, 40), Color.White);
-
-            spriteBatch.End();
-
-            // If the game is transitioning on or off, fade it out to black.
-            if (TransitionPosition > 0 || pauseAlpha > 0)
-            {
-                float alpha = MathHelper.Lerp(1f - TransitionAlpha, 1f, pauseAlpha / 2);
-
-                ScreenManager.FadeBackBufferToBlack(alpha);
-            }
             #endregion
 
             #region Top Screen
-            bloom.BeginDraw();
 
             ScreenManager.GraphicsDevice.Viewport = topViewport;
             
@@ -680,31 +664,39 @@ namespace GameStateManagementSample
                 }
             }
 
-            DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera2);
+            //DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera2);
 
             //DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.Identity, camera2);
             //DrawModel(groundModel, Matrix.Identity, camera2);
             //DrawModel(shipModel, Matrix.CreateTranslation(50, 50, 100) * Matrix.CreateScale(10));
 
-            spriteBatch.Begin();
 
-            spriteBatch.DrawString(gameFont, "Health : " + ship.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X+50, 40), Color.White);
-            //spriteBatch.DrawString(gameFont, "Power  : " + (ship2.bullets.Length - ship2.currentBullet), new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width - 200, 40), Color.White);
-
-            spriteBatch.End();
-
-            ScreenManager.GraphicsDevice.Viewport = ScreenManager.OriginalViewport;
-
-            // If the game is transitioning on or off, fade it out to black.
-            if (TransitionPosition > 0 || pauseAlpha > 0)
-            {
-                float alpha = MathHelper.Lerp(1f - TransitionAlpha, 1f, pauseAlpha / 2);
-
-                ScreenManager.FadeBackBufferToBlack(alpha);
-            }
             #endregion
+            bloom.EndDraw();
+
+            #region No Bloom Draw
 
             bloom.ShowBuffer = BloomComponent.IntermediateBuffer.FinalResult;
+            spriteBatch.Begin();
+            spriteBatch.Draw(bloom.FinalRenderTarget, new Rectangle(0, 0, ScreenManager.GraphicsDevice.Viewport.Width, ScreenManager.GraphicsDevice.Viewport.Height), Color.White);
+            spriteBatch.End();
+
+            // draw GUI:
+
+            ScreenManager.GraphicsDevice.Viewport = bottomViewport;
+
+            spriteBatch.Begin();
+            spriteBatch.DrawString(gameFont, "Health : " + ship2.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
+            spriteBatch.End();
+
+            ScreenManager.GraphicsDevice.Viewport = topViewport;
+
+            spriteBatch.Begin();
+
+            spriteBatch.DrawString(gameFont, "Health : " + ship.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
+            //spriteBatch.DrawString(gameFont, "Power  : " + (ship2.bullets.Length - ship2.currentBullet), new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width - 200, 40), Color.White);
+            spriteBatch.End();
+            #endregion
         }
 
         private void DrawModel(Model model, Matrix world, EnvironmentMapEffect be, ChaseCamera camera)

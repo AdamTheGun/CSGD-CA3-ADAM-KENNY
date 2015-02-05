@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA3\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap.xnb</Output>
-      <Time>2015-01-08T00:40:11.6377986+08:00</Time>
+      <Time>2015-02-05T10:39:39.4603426+08:00</Time>
     </Item>
     <Item>
       <Source>Ship_Texmap1.jpg</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA3\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap1.xnb</Output>
-      <Time>2015-01-12T11:41:17.1311131+08:00</Time>
+      <Time>2015-02-05T10:49:31.4599182+08:00</Time>
     </Item>
     <Item>
       <Source>skybox0.jpg</Source>
@@ -409,7 +409,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA3\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap1_0.xnb</Output>
-      <Time>2015-01-12T11:41:17.1311131+08:00</Time>
+      <Time>2015-02-05T10:49:31.4599182+08:00</Time>
     </Item>
     <Item>
       <Source>SpaceShip1.FBX</Source>
@@ -432,7 +432,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\user\Desktop\Singapore Polytechnic\Year 2(Current)\Semester 2(Current)\CSGD\CSGD CA3\GameStateManagementSample\GameStateManagementSample\bin\x86\Debug\Content\Ship_Texmap_0.xnb</Output>
-      <Time>2015-01-08T00:40:11.6377986+08:00</Time>
+      <Time>2015-02-05T10:39:39.4603426+08:00</Time>
     </Item>
     <Item>
       <Source>SpaceShip2.FBX</Source>

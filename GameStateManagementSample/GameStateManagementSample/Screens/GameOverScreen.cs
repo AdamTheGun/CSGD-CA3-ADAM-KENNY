@@ -77,6 +77,7 @@ namespace GameStateManagementSample
             ScreenManager.MainMenu.Stop(AudioStopOptions.Immediate);
             ScreenManager.MainMenu = ScreenManager.SoundBank.GetCue("MainMenu");
             ScreenManager.MainMenu.Play();
+            ScreenManager.ScreenInCounter = 0;
             LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
                                                            new MainMenuScreen(ScreenManager.SoundBank));
         }

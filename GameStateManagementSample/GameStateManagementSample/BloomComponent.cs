@@ -26,10 +26,16 @@ namespace BloomPostprocess
         Effect bloomCombineEffect;
         Effect gaussianBlurEffect;
 
+        RenderTarget2D finalRenderTarget;
         RenderTarget2D sceneRenderTarget;
         RenderTarget2D renderTarget1;
         RenderTarget2D renderTarget2;
 
+
+        public RenderTarget2D FinalRenderTarget
+        {
+            get { return finalRenderTarget; }
+        }
 
         // Choose what display settings the bloom should use.
         public BloomSettings Settings
@@ -60,7 +66,6 @@ namespace BloomPostprocess
 
         IntermediateBuffer showBuffer = IntermediateBuffer.FinalResult;
 
-
         #endregion
 
         #region Initialization
@@ -87,7 +92,7 @@ namespace BloomPostprocess
 
             // Look up the resolution and format of our main backbuffer.
             PresentationParameters pp = GraphicsDevice.PresentationParameters;
-            
+
             int width = pp.BackBufferWidth;
             int height = pp.BackBufferHeight;
 
@@ -95,6 +100,10 @@ namespace BloomPostprocess
 
             // Create a texture for rendering the main scene, prior to applying bloom.
             sceneRenderTarget = new RenderTarget2D(GraphicsDevice, width, height, false,
+                                                   format, pp.DepthStencilFormat, pp.MultiSampleCount,
+                                                   RenderTargetUsage.DiscardContents);
+
+            finalRenderTarget = new RenderTarget2D(GraphicsDevice, width, height, false,
                                                    format, pp.DepthStencilFormat, pp.MultiSampleCount,
                                                    RenderTargetUsage.DiscardContents);
 
@@ -144,7 +153,7 @@ namespace BloomPostprocess
         /// This is where it all happens. Grabs a scene that has already been rendered,
         /// and uses postprocess magic to add a glowing bloom effect over the top of it.
         /// </summary>
-        public override void Draw(GameTime gameTime)
+        public void EndDraw()
         {
             GraphicsDevice.SamplerStates[1] = SamplerState.LinearClamp;
 
@@ -176,7 +185,7 @@ namespace BloomPostprocess
             // Pass 4: draw both rendertarget 1 and the original scene
             // image back into the main backbuffer, using a shader that
             // combines them to produce the final bloomed result.
-            GraphicsDevice.SetRenderTarget(null);
+            GraphicsDevice.SetRenderTarget(finalRenderTarget);
 
             EffectParameterCollection parameters = bloomCombineEffect.Parameters;
 
@@ -193,6 +202,8 @@ namespace BloomPostprocess
                                viewport.Width, viewport.Height,
                                bloomCombineEffect,
                                IntermediateBuffer.FinalResult);
+
+            GraphicsDevice.SetRenderTarget(null);
         }
 
 
