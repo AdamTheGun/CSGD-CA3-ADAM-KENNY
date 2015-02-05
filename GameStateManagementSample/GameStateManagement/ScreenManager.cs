@@ -48,8 +48,6 @@ namespace GameStateManagement
 
         SpriteBatch spriteBatch;
         SpriteFont font;
-        SpriteFont Titlefont;
-        SpriteFont Menufont;
         Texture2D blankTexture;
 
         bool isInitialized;
@@ -122,16 +120,6 @@ namespace GameStateManagement
         public SpriteFont Font
         {
             get { return font; }
-        }
-
-        public SpriteFont TitleFont
-        {
-            get { return Titlefont; }
-        }
-
-        public SpriteFont MenuFont
-        {
-            get { return Menufont; }
         }
 
         int screenInCounter;
@@ -251,9 +239,7 @@ namespace GameStateManagement
             ContentManager content = Game.Content;
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = content.Load<SpriteFont>("gamefont");
-            Titlefont = content.Load<SpriteFont>("TitleFont");
-            Menufont = content.Load<SpriteFont>("menuFont");
+            font = content.Load<SpriteFont>("menufont");
             blankTexture = content.Load<Texture2D>("blank");
             screenInCounter = 0;
             originalViewport = GraphicsDevice.Viewport;

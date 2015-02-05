@@ -183,6 +183,7 @@ namespace GameStateManagementSample
                 rockModel = content.Load<Model>("Rock");
                 shipModel = content.Load<Model>("SpaceShip1");
                 shipModel2 = content.Load<Model>("SpaceShip2");
+                groundModel = content.Load<Model>("Ground");
                 cubeModel = content.Load<Model>("cube");
                 bulletModel = content.Load<Model>("Cone");
                 skyBoxModel = content.Load<Model>("Space_SkyBox");
@@ -724,10 +725,6 @@ namespace GameStateManagementSample
                     be.View = camera.View;
                     be.Projection = camera.Projection;
                     be.World = world;
-                    be.FogEnabled = true;
-                    be.FogColor = Color.DarkBlue.ToVector3();
-                    be.FogStart = 1000000.0f;
-                    be.FogEnd = 50000000.0f;
                     ScreenManager.GraphicsDevice.SetVertexBuffer(mmp.VertexBuffer, mmp.VertexOffset);
                     ScreenManager.GraphicsDevice.Indices = mmp.IndexBuffer;
                     be.CurrentTechnique.Passes[0].Apply();
@@ -776,10 +773,6 @@ namespace GameStateManagementSample
                     //effect.FogColor = Color.White.ToVector3();
                     //effect.FogStart = 999999.0f;
                     //effect.FogEnd = 1000000.0f;
-                    effect.FogEnabled = true;
-                    effect.FogColor = Color.HotPink.ToVector3();
-                    effect.FogStart = 100.0f;
-                    effect.FogEnd = 50000000.0f;
                     effect.EnableDefaultLighting();
                     effect.DiffuseColor = new Vector3(0.7f, 0.7f, 0.7f);
                     effect.World = transforms[mesh.ParentBone.Index] * world;
