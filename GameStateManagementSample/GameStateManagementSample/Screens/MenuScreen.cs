@@ -236,7 +236,7 @@ namespace GameStateManagementSample
 
             GraphicsDevice graphics = ScreenManager.GraphicsDevice;
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
-            SpriteFont font = ScreenManager.Font;
+            SpriteFont font = ScreenManager.TitleFont;
 
             spriteBatch.Begin();
 
@@ -256,10 +256,10 @@ namespace GameStateManagementSample
             float transitionOffset = (float)Math.Pow(TransitionPosition, 2);
 
             // Draw the menu title centered on the screen
-            Vector2 titlePosition = new Vector2(graphics.Viewport.Width / 2, 80);
+            Vector2 titlePosition = new Vector2(graphics.Viewport.Width / 2, graphics.Viewport.TitleSafeArea.Top+font.MeasureString(menuTitle).Y+50);
             Vector2 titleOrigin = font.MeasureString(menuTitle) / 2;
             Color titleColor = new Color(192, 192, 192) * TransitionAlpha;
-            float titleScale = 1.25f;
+            float titleScale = 2.0f;
 
             titlePosition.Y -= transitionOffset * 100;
 

@@ -145,7 +145,7 @@ namespace GameStateManagementSample
 #endif
 
             // Draw the selected entry in yellow, otherwise white.
-            Color color = isSelected ? Color.Yellow : Color.White;
+            Color color = isSelected ? Color.White : Color.Silver;
 
             // Pulsate the size of the selected menu entry.
             double time = gameTime.TotalGameTime.TotalSeconds;
@@ -157,10 +157,24 @@ namespace GameStateManagementSample
             // Modify the alpha to fade text out during transitions.
             color *= screen.TransitionAlpha;
 
+            //color.A *= (byte)(color.A * pulsate);
+
+            if (isSelected)
+            {
+                if (pulsate > 0.5f)
+                {
+                    color *= pulsate;
+                }
+                else
+                {
+                    color *= 0.5f;
+                }
+            }
+
             // Draw text, centered on the middle of each line.
             ScreenManager screenManager = screen.ScreenManager;
             SpriteBatch spriteBatch = screenManager.SpriteBatch;
-            SpriteFont font = screenManager.Font;
+            SpriteFont font = screenManager.MenuFont;
 
             Vector2 origin = new Vector2(0, font.LineSpacing / 2);
 
