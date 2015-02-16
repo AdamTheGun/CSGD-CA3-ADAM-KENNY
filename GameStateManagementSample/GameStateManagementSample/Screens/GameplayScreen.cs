@@ -23,8 +23,8 @@ using BloomPostprocess;
 namespace GameStateManagementSample
 {
     // NOTE TO DEVELOPERS
-    // BOTTOM VIEWPORT USES CAMERA
-    // TOP VIEWPORT USES CAMERA2
+    // BOTTOM VIEWPORT USES CAMERA and ship
+    // TOP VIEWPORT USES CAMERA2 and ship2
 
     /// <summary>
     /// This screen implements the actual game logic. It is just a
@@ -86,6 +86,7 @@ namespace GameStateManagementSample
         Model groundModel;
         Model cubeModel;
         Model bulletModel;
+        Model indicatorModel;
         
         bool cameraSpringEnabled = true;
         bool camera2SpringEnabled = true;
@@ -186,6 +187,7 @@ namespace GameStateManagementSample
                 cubeModel = content.Load<Model>("cube");
                 bulletModel = content.Load<Model>("Cone");
                 skyBoxModel = content.Load<Model>("Space_SkyBox");
+                indicatorModel = content.Load<Model>("Cone");
                 audioEngine = ScreenManager.AudioEngine;
                 soundBank = ScreenManager.SoundBank;
                 waveBank = ScreenManager.WaveBank;
@@ -429,7 +431,7 @@ namespace GameStateManagementSample
                     }
 #endif
                 }
-                ship.shipHealth = 0;
+                //ship.shipHealth = 0;
                 if (!ScreenManager.MusicCue.IsPlaying)
                 {
                     musicPlaying = false;
@@ -444,12 +446,12 @@ namespace GameStateManagementSample
                 }
 
                 // Reset the ship on R key or right thumb stick clicked
-                if (currentKeyboardState.IsKeyDown(Keys.R) ||
-                    currentGamePadState.Buttons.RightStick == ButtonState.Pressed)
-                {
-                    ship.Reset(ship1Pos);
-                    camera.Reset();
-                }
+                //if (currentKeyboardState.IsKeyDown(Keys.R) ||
+                //    currentGamePadState.Buttons.RightStick == ButtonState.Pressed)
+                //{
+                //    ship.Reset(ship1Pos);
+                //    camera.Reset();
+                //}
 
                 // Update the ship
                 ship.Update(gameTime, shipModel, cubeModel,bulletModel,ship2.World,2);
@@ -545,6 +547,20 @@ namespace GameStateManagementSample
 
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
 
+            Vector3 ship1IndicatorPos = ship.Position + ship.Up * 1000;
+            Vector3 ship1IndicatorHPR = Vector3.Zero;
+            Vector3 ship1Dir = ship.Position - ship2.Position;
+            float ship1Len = ship1Dir.Length();
+            ship1IndicatorHPR.X = (float)Math.Atan2(ship1Dir.X, ship1Dir.Z);
+            ship1IndicatorHPR.Y = -(float)Math.Asin(ship1Dir.Y / ship1Len);
+
+            Vector3 ship2IndicatorPos = ship2.Position + ship2.Up * 1000;
+            Vector3 ship2IndicatorHPR = Vector3.Zero;
+            Vector3 ship2Dir = ship2.Position - ship.Position;
+            float ship2Len = ship2Dir.Length();
+            ship2IndicatorHPR.X = (float)Math.Atan2(ship2Dir.X, ship2Dir.Z);
+            ship2IndicatorHPR.Y = -(float)Math.Asin(ship2Dir.Y / ship2Len);
+
             bloom.BeginDraw();
             #region Bottom Screen
 
@@ -603,6 +619,7 @@ namespace GameStateManagementSample
                 DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera);
             }
 
+            DrawModel(indicatorModel, Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * Matrix.CreateScale(10) * Matrix.CreateFromYawPitchRoll(ship1IndicatorHPR.X, ship1IndicatorHPR.Y, ship1IndicatorHPR.Z) * Matrix.CreateTranslation(ship1IndicatorPos), camera);
             DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera);
 
 
@@ -664,7 +681,8 @@ namespace GameStateManagementSample
                 }
             }
 
-            //DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera2);
+            DrawModel(indicatorModel, Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * Matrix.CreateScale(10) * Matrix.CreateFromYawPitchRoll(ship2IndicatorHPR.X, ship2IndicatorHPR.Y, ship2IndicatorHPR.Z) * Matrix.CreateTranslation(ship2IndicatorPos), camera2);
+            DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera2);
 
             //DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.Identity, camera2);
             //DrawModel(groundModel, Matrix.Identity, camera2);

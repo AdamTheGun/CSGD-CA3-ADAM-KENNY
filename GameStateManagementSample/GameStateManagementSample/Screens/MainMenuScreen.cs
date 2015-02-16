@@ -26,7 +26,7 @@ namespace GameStateManagementSample
         /// Constructor fills in the menu contents.
         /// </summary>
         public MainMenuScreen(SoundBank soundbank)
-            : base("DARK LEGACY",soundbank)
+            : base("PEW-PEW Space",soundbank)
         {
             // Create our menu entries.
             MenuEntry playGameMenuEntry = new MenuEntry("Play Game");
