@@ -19,7 +19,6 @@ Content\A_Button.xnb
 Content\B_Button.xnb
 Content\menufont.xnb
 Content\gamefont.xnb
-Content\TitleFont.xnb
 Content\Ground.xnb
 Content\cube.xnb
 Content\Cone.xnb
@@ -38,6 +37,8 @@ Content\Ship_Texmap1_0.xnb
 Content\Ship_Texmap_0.xnb
 Content\Space_Texmap_0.xnb
 Content\Rock_0.xnb
+Content\TitleFont.xnb
+Content\Metal_Hit.xnb
 Content\Sounds.xgs
 Content\WaveBank.xwb
 Content\SoundBank.xsb

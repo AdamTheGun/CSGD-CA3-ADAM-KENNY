@@ -54,6 +54,8 @@ namespace ChaseCameraSample
             get { return right; }
         }
 
+        
+
         /// <summary>
         /// Full speed at which ship can rotate; measured in radians per second.
         /// </summary>
@@ -113,6 +115,15 @@ namespace ChaseCameraSample
 
         float crashTimer = 0.0f;
         bool crashBool = false;
+
+        private bool hitbool;
+        public bool HitBool
+        {
+            get { return hitbool; }
+            set { hitbool = value; }
+        }
+        private float hitTimer;
+
 
         #endregion
 
@@ -218,8 +229,6 @@ namespace ChaseCameraSample
                 rotationAmount = -gamePadState1.ThumbSticks.Left;
             }
             
-                
-
 
             
             // Scale rotation amount to radians per second
@@ -394,6 +403,7 @@ namespace ChaseCameraSample
             {
                 currentBullet = 0;
             }
+            float prevShipHealth = shipHealth;
 
             for (int i = 0; i < bullets.Length; i++)
             {
@@ -406,9 +416,40 @@ namespace ChaseCameraSample
                 }
                 else
                 {
-                    shipHealth = bullets[i].BulletCollision(bulletModel, ship, shipHealth,OtherShipMtx,10,1.5f);
+                    shipHealth = bullets[i].BulletCollision(bulletModel, ship, shipHealth,OtherShipMtx,10,1.5f,shipSounds);
                 }
                 bullets[i].Update(gameTime);
+            }
+
+            if (shipHealth != prevShipHealth)
+            {
+                hitbool = true;
+                hitTimer = 0.0f;
+            }
+
+            if (hitbool)
+            {
+                if (playerNum == 1)
+                {
+                    GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
+                }
+                else if (playerNum == 2)
+                {
+                    GamePad.SetVibration(PlayerIndex.Two, 1.0f, 1.0f);
+                }
+                hitTimer += 1 * elapsed;
+            }
+            if (hitTimer >= 1.0f)
+            {
+                if (playerNum == 1)
+                {
+                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+                }
+                else if (playerNum == 2)
+                {
+                    GamePad.SetVibration(PlayerIndex.Two, 1.0f, 1.0f);
+                }
+                hitbool = false;
             }
 
             // Reconstruct the ship's world matrix

@@ -78,11 +78,11 @@ namespace GameStateManagementSample
                 new Keys[] { Keys.Down },
                 true);
             menuSelect = new InputAction(
-                new Buttons[] { Buttons.A, Buttons.Start },
+                new Buttons[] { Buttons.A },
                 new Keys[] { Keys.Enter, Keys.Space },
                 true);
             menuCancel = new InputAction(
-                new Buttons[] { Buttons.B, Buttons.Back },
+                new Buttons[] { Buttons.B },
                 new Keys[] { Keys.Escape },
                 true);
         }
@@ -154,7 +154,8 @@ namespace GameStateManagementSample
         /// </summary>
         protected virtual void OnCancel(PlayerIndex playerIndex)
         {
-            LoadingScreen.Load(ScreenManager, false, ControllingPlayer, new MainMenuScreen(soundBank));
+            ScreenManager.ScreenInCounter = 0;
+            LoadingScreen.Load(ScreenManager, false, ControllingPlayer,new BackgroundScreen(), new MainMenuScreen(soundBank));
         }
 
 

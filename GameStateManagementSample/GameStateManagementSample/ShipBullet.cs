@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using ChaseCameraSample;
+using Microsoft.Xna.Framework.Audio;
 
 namespace ChaseCameraSample
 {
@@ -44,6 +45,8 @@ namespace ChaseCameraSample
         {
             get { return right; }
         }
+
+     
 
         public const float LifeSpan = 1.0f;
         public float LifeTime = 0.0f;
@@ -99,7 +102,7 @@ namespace ChaseCameraSample
             Velocity = Vector3.Zero;
         }
 
-        public float BulletCollision(Model BulletModel,Model CollisionModel,float inHealth,Matrix shipMtx,int CollisionScale,float radius)
+        public float BulletCollision(Model BulletModel,Model CollisionModel,float inHealth,Matrix shipMtx,int CollisionScale,float radius,SoundBank soundbank)
         {
             if(isAlive){
                 for (int i = 0; i < BulletModel.Meshes.Count; i++)
@@ -124,6 +127,7 @@ namespace ChaseCameraSample
                             Reset();
                             LifeTime = 0.0f;
                             inHealth -= 1;
+                            soundbank.GetCue("Metal_Hit").Play();
                         }
                     }
                 }    

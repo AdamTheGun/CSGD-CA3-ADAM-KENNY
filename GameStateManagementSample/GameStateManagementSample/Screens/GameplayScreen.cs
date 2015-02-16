@@ -457,6 +457,7 @@ namespace GameStateManagementSample
                 ship.Update(gameTime, shipModel, cubeModel,bulletModel,ship2.World,2);
                 ship2.Update(gameTime, shipModel, cubeModel, bulletModel, ship.World,1);
 
+
                 // Update the camera to chase the new target
                 UpdateCameraChaseTarget(ship,camera);
                 UpdateCameraChaseTarget(ship2,camera2);

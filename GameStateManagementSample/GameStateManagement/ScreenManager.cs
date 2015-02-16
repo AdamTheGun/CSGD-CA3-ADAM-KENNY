@@ -75,7 +75,7 @@ namespace GameStateManagement
             set { audioEnabled = value; }
         }
 
-        float audioVolume = 1.0f;
+        float audioVolume = 0.6f;
         public float AudioVolume
         {
             get { return audioVolume; }
@@ -226,7 +226,7 @@ namespace GameStateManagement
                 audioEngine.Update();
             }
             musicCategory = audioEngine.GetCategory("Music");
-            musicCategory.SetVolume(1);
+            musicCategory.SetVolume(audioVolume);
             sfxCategory = audioEngine.GetCategory("SFX");
             sfxCategory.SetVolume(sfxVolume);
             

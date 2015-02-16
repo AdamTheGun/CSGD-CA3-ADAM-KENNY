@@ -40,7 +40,7 @@ namespace GameStateManagementSample
             optionsMenuEntry.Selected += OptionsMenuEntrySelected;
             controlsMenuEntry.Selected += ControlsMenuEntrySelected;
             creditsMenuEntry.Selected += CreditsMenuEntrySelected;
-            exitMenuEntry.Selected += OnCancel;
+            exitMenuEntry.Selected += ExitMenuEntrySelected;
 
             // Add entries to the menu.
             MenuEntries.Add(playGameMenuEntry);
@@ -89,10 +89,8 @@ namespace GameStateManagementSample
             ScreenManager.ScreenInCounter = 4;
         }
 
-        /// <summary>
-        /// When the user cancels the main menu, ask if they want to exit the sample.
-        /// </summary>
-        protected override void OnCancel(PlayerIndex playerIndex)
+
+        void ExitMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             const string message = "Are you sure you want to exit this sample?";
 
@@ -100,7 +98,21 @@ namespace GameStateManagementSample
 
             confirmExitMessageBox.Accepted += ConfirmExitMessageBoxAccepted;
 
-            ScreenManager.AddScreen(confirmExitMessageBox, playerIndex);
+            ScreenManager.AddScreen(confirmExitMessageBox,e.PlayerIndex );
+        }
+
+        /// <summary>
+        /// When the user cancels the main menu, ask if they want to exit the sample.
+        /// </summary>
+        protected override void OnCancel(PlayerIndex playerIndex)
+        {
+            //const string message = "Are you sure you want to exit this sample?";
+
+            //MessageBoxScreen confirmExitMessageBox = new MessageBoxScreen(message);
+
+            //confirmExitMessageBox.Accepted += ConfirmExitMessageBoxAccepted;
+
+            //ScreenManager.AddScreen(confirmExitMessageBox, playerIndex);
         }
 
 
