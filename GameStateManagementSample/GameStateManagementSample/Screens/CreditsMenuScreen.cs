@@ -46,6 +46,12 @@ namespace GameStateManagementSample
             MenuEntries.Add(back);
         }
 
+        protected override void OnCancel(PlayerIndex playerIndex)
+        {
+            ScreenManager.ScreenInCounter = 0;
+            LoadingScreen.Load(ScreenManager, false, ControllingPlayer, new BackgroundScreen(), new MainMenuScreen(ScreenManager.SoundBank));
+        }
+
         public override void Activate(bool instancePreserved)
         {
             base.Activate(instancePreserved);

@@ -18,6 +18,8 @@ using Microsoft.Xna.Framework.Audio;
 using GameStateManagement;
 using ChaseCameraSample;
 using BloomPostprocess;
+using Particles.Particles;
+using System.Collections.Generic;
 #endregion
 
 namespace GameStateManagementSample
@@ -68,6 +70,8 @@ namespace GameStateManagementSample
 
         Vector3 ship1Pos, ship2Pos;
         Vector3[] rockPos = new Vector3[800];
+        int[] rockScale = new int[800];
+        int[] rockRotation = new int[800];
 
         //AUDIO STUFF
         AudioEmitter shipEmit1, shipEmit2;
@@ -91,12 +95,11 @@ namespace GameStateManagementSample
         bool cameraSpringEnabled = true;
         bool camera2SpringEnabled = true;
 
-        
+        //ParticleEffect particleEffect;
 
         #endregion
 
         #region Initialization
-
 
         /// <summary>
         /// Constructor.
@@ -214,6 +217,13 @@ namespace GameStateManagementSample
                 envEffect1.EnvironmentMapAmount = 1.0f;
                 envEffect1.FresnelFactor = 1.0f;
                 envEffect1.EnvironmentMapSpecular = Vector3.Zero;
+
+                Texture2D smokeTex = content.Load<Texture2D>("Smoke");
+
+                //PARTICLE EFFECT
+                //particleEffect = new ParticleEffect(100, 1000, 1, 50.0f);
+                //List<Texture2D> textures = new List<Texture2D> { content.Load<Texture2D>("Smoke") };
+                //particleEffect.LoadContent(textures, ScreenManager.GraphicsDevice);
 
                 // Environmental Map Effect for Player 2
                 envEffect2 = new EnvironmentMapEffect(ScreenManager.GraphicsDevice);
@@ -393,6 +403,8 @@ namespace GameStateManagementSample
                             currentMouseState.X < ScreenManager.GraphicsDevice.Viewport.Width / 10 &&
                             currentMouseState.Y < ScreenManager.GraphicsDevice.Viewport.Height / 10;
 
+                    
+
 #if Windows
                     // Pressing the A button or key toggles the spring behavior on and off
                     if (lastKeyboardState.IsKeyUp(Keys.A) &&
@@ -431,6 +443,10 @@ namespace GameStateManagementSample
                     }
 #endif
                 }
+                /*
+                particleEffect.Emit(gameTime, ship2Pos);
+                particleEffect.Update(gameTime);
+                */
                 //ship.shipHealth = 0;
                 if (!ScreenManager.MusicCue.IsPlaying)
                 {
@@ -483,6 +499,9 @@ namespace GameStateManagementSample
                     ScreenManager.MainMenu = ScreenManager.SoundBank.GetCue("WinMusic");
                     ScreenManager.MainMenu.Play();
                     ScreenManager.AddScreen(new GameOverScreen(ScreenManager.SoundBank), PlayerIndex.One);
+
+                    GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
                 }
 
             }
@@ -520,6 +539,8 @@ namespace GameStateManagementSample
 #else
 
                 ScreenManager.AddScreen(new PauseMenuScreen(ScreenManager.SoundBank), ControllingPlayer);
+                GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+                GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
 #endif
             }
             else
@@ -617,7 +638,7 @@ namespace GameStateManagementSample
             ScreenManager.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             for (int i = 0; i < rockPos.Length; i++)
             {
-                DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera);
+                DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera);
             }
 
             DrawModel(indicatorModel, Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * Matrix.CreateScale(10) * Matrix.CreateFromYawPitchRoll(ship1IndicatorHPR.X, ship1IndicatorHPR.Y, ship1IndicatorHPR.Z) * Matrix.CreateTranslation(ship1IndicatorPos), camera);
@@ -646,7 +667,7 @@ namespace GameStateManagementSample
             for (int i = 0; i < rockPos.Length; i++)
             {
                 if(Vector3.Distance(ship2Pos,rockPos[i])<10000000)
-                    DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.CreateTranslation(rockPos[i]), camera2);
+                    DrawModel(rockModel, Matrix.CreateScale(rockScale[i])* Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera2);
             }
 
             for (int i = 0; i < ship2.bullets.Length; i++)
@@ -704,11 +725,15 @@ namespace GameStateManagementSample
 
             ScreenManager.GraphicsDevice.Viewport = bottomViewport;
 
+            //particleEffect.Draw(ScreenManager.GraphicsDevice, camera.View, camera.Projection);
+
             spriteBatch.Begin();
             spriteBatch.DrawString(gameFont, "Health : " + ship2.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
             spriteBatch.End();
 
             ScreenManager.GraphicsDevice.Viewport = topViewport;
+
+            //particleEffect.Draw(ScreenManager.GraphicsDevice, camera2.View, camera2.Projection);
 
             spriteBatch.Begin();
 
@@ -829,6 +854,8 @@ namespace GameStateManagementSample
                 }
 
                 rockPos[i] = new Vector3(randX, randY, randZ);
+                rockScale[i] = random.Next(10, 200);
+                rockRotation[i] = random.Next(0, 359);
             }
         }
         #endregion

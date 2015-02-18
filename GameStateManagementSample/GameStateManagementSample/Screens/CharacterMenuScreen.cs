@@ -61,7 +61,12 @@ namespace GameStateManagementSample
 
             base.Activate(instancePreserved);
         }
-
+        protected override void OnCancel(PlayerIndex playerIndex)
+        {
+            ScreenManager.ScreenInCounter = 0;
+            ScreenManager.CurrentShipChoosing = 1;
+            LoadingScreen.Load(ScreenManager, false, ControllingPlayer, new BackgroundScreen(), new MainMenuScreen(ScreenManager.SoundBank));
+        }
         /// <summary>
         /// Fills in the latest values for the options screen menu text.
         /// </summary>

@@ -386,11 +386,17 @@ namespace ChaseCameraSample
             else 
             {
                 crashTimer += elapsed * 1;
+
+                GamePad.SetVibration(PlayerIndex.Two, 1.0f, 1.0f);
+                GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
                 if (crashTimer >= 5)
                 {
                     crashBool = false;
                     shipSounds.GetCue("CrashFx").Stop(AudioStopOptions.Immediate);
                     crashTimer = 0.0f;
+
+                    GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
                 }
             }
 
@@ -431,11 +437,11 @@ namespace ChaseCameraSample
             {
                 if (playerNum == 1)
                 {
-                    GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
+                    GamePad.SetVibration(PlayerIndex.Two, 1.0f, 1.0f);
                 }
                 else if (playerNum == 2)
                 {
-                    GamePad.SetVibration(PlayerIndex.Two, 1.0f, 1.0f);
+                    GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
                 }
                 hitTimer += 1 * elapsed;
             }
@@ -443,11 +449,11 @@ namespace ChaseCameraSample
             {
                 if (playerNum == 1)
                 {
-                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+                    GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
                 }
                 else if (playerNum == 2)
                 {
-                    GamePad.SetVibration(PlayerIndex.Two, 1.0f, 1.0f);
+                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
                 }
                 hitbool = false;
             }
@@ -485,6 +491,8 @@ namespace ChaseCameraSample
                         shipHealth -= 10;
                         shipSounds.GetCue("CrashFx").Play();
                         crashBool = true;
+                        GamePad.SetVibration(PlayerIndex.Two, 1.0f, 1.0f);
+                        GamePad.SetVibration(PlayerIndex.One, 1.0f, 1.0f);
                     }
                 }
             }

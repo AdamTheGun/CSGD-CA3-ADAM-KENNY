@@ -154,8 +154,11 @@ namespace GameStateManagementSample
         /// </summary>
         protected virtual void OnCancel(PlayerIndex playerIndex)
         {
+            ExitScreen();
+            /*
             ScreenManager.ScreenInCounter = 0;
             LoadingScreen.Load(ScreenManager, false, ControllingPlayer,new BackgroundScreen(), new MainMenuScreen(soundBank));
+             * */
         }
 
 

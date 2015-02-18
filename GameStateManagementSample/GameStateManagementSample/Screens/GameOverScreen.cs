@@ -87,8 +87,8 @@ namespace GameStateManagementSample
            // ScreenManager.SoundBank.GetCue("UI Click").Play();
 
             ScreenManager.MainMenu.Stop(AudioStopOptions.Immediate);
-            LoadingScreen.Load(ScreenManager, false, ControllingPlayer, new BackgroundScreen(), new GameplayScreen());
-            ExitScreen();
+            LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
+                                   new GameplayScreen());
         }
 
        

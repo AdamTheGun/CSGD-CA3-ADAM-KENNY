@@ -24,7 +24,7 @@ namespace GameStateManagementSample
     {
         #region Fields
 
-
+        
         #endregion
 
         #region Initialization
@@ -44,6 +44,12 @@ namespace GameStateManagementSample
             
             // Add entries to the menu.
             MenuEntries.Add(back);
+        }
+
+        protected override void OnCancel(PlayerIndex playerIndex)
+        {
+            ScreenManager.ScreenInCounter = 0;
+            LoadingScreen.Load(ScreenManager, false, ControllingPlayer, new BackgroundScreen(), new MainMenuScreen(ScreenManager.SoundBank));
         }
 
         public override void Activate(bool instancePreserved)
