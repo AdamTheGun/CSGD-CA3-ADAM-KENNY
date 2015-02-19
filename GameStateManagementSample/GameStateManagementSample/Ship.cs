@@ -403,7 +403,7 @@ namespace ChaseCameraSample
             
 
             // Prevent ship from flying under the ground
-            Position.Y = Math.Max(Position.Y, MinimumAltitude);
+            //Position.Y = Math.Max(Position.Y, MinimumAltitude);
 
             if (currentBullet > bullets.Length-1)
             {

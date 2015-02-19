@@ -95,6 +95,8 @@ namespace GameStateManagementSample
         bool cameraSpringEnabled = true;
         bool camera2SpringEnabled = true;
 
+        Texture2D TLifeBarFrame, TLifeBarBar;
+
         //ParticleEffect particleEffect;
 
         #endregion
@@ -191,6 +193,9 @@ namespace GameStateManagementSample
                 bulletModel = content.Load<Model>("Cone");
                 skyBoxModel = content.Load<Model>("Space_SkyBox");
                 indicatorModel = content.Load<Model>("Cone");
+                TLifeBarBar = content.Load<Texture2D>("LifeBarBar");
+                TLifeBarFrame = content.Load<Texture2D>("LifeBarFrame");
+
                 audioEngine = ScreenManager.AudioEngine;
                 soundBank = ScreenManager.SoundBank;
                 waveBank = ScreenManager.WaveBank;
@@ -645,7 +650,7 @@ namespace GameStateManagementSample
             DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera);
 
 
-
+            
             #endregion
 
             #region Top Screen
@@ -724,11 +729,13 @@ namespace GameStateManagementSample
             // draw GUI:
 
             ScreenManager.GraphicsDevice.Viewport = bottomViewport;
-
             //particleEffect.Draw(ScreenManager.GraphicsDevice, camera.View, camera.Projection);
 
             spriteBatch.Begin();
-            spriteBatch.DrawString(gameFont, "Health : " + ship2.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
+            spriteBatch.Draw(TLifeBarBar, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, (int)ship2.shipHealth * 2, 50), new Rectangle(0, 0, (int)ship2.shipHealth * 2, 50), Color.White);
+            spriteBatch.Draw(TLifeBarFrame, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, 200, 50), Color.White);
+            
+            //spriteBatch.DrawString(gameFont, "Health : " + ship2.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
             spriteBatch.End();
 
             ScreenManager.GraphicsDevice.Viewport = topViewport;
@@ -736,8 +743,10 @@ namespace GameStateManagementSample
             //particleEffect.Draw(ScreenManager.GraphicsDevice, camera2.View, camera2.Projection);
 
             spriteBatch.Begin();
-
-            spriteBatch.DrawString(gameFont, "Health : " + ship.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
+            spriteBatch.Draw(TLifeBarBar, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40,(int)ship.shipHealth * 2, 50), new Rectangle(0, 0, (int)ship.shipHealth * 2, 50), Color.White);
+            spriteBatch.Draw(TLifeBarFrame, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, 200, 50), Color.White);
+            
+            //spriteBatch.DrawString(gameFont, "Health : " + ship.shipHealth, new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40), Color.White);
             //spriteBatch.DrawString(gameFont, "Power  : " + (ship2.bullets.Length - ship2.currentBullet), new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width - 200, 40), Color.White);
             spriteBatch.End();
             #endregion
