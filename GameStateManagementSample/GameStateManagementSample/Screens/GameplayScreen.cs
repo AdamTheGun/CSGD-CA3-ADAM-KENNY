@@ -480,9 +480,19 @@ namespace GameStateManagementSample
                 ship.Update(gameTime, shipModel, cubeModel,bulletModel,ship2.World,2);
                 ship2.Update(gameTime, shipModel, cubeModel, bulletModel, ship.World,1);
 
-                AsteroidCollision(ship);
-                AsteroidCollision(ship2);
-
+                AsteroidCollision(ship,ship2);
+                AsteroidCollision(ship2,ship);
+                for(int i = 0;i<ship.bullets.Length;i++)
+                {
+                    if (ship.bullets[i].isAlive)
+                    {
+                        BulletCollision(ship.bullets[i]);
+                    }
+                    if (ship2.bullets[i].isAlive)
+                    {
+                        BulletCollision(ship2.bullets[i]);
+                    }
+                }
                 // Update the camera to chase the new target
                 UpdateCameraChaseTarget(ship,camera);
                 UpdateCameraChaseTarget(ship2,camera2);
@@ -517,7 +527,7 @@ namespace GameStateManagementSample
             ScreenManager.AudioEngine.Update();
         }
 
-        public void AsteroidCollision(Ship s)
+        public void AsteroidCollision(Ship s,Ship otherS)
         {
             for (int i = 0; i < shipModel.Meshes.Count; i++)
             {
@@ -535,7 +545,7 @@ namespace GameStateManagementSample
                         //{
                             BoundingSphere rockBoundingSphere = rockModel.Meshes[0].BoundingSphere;
                             rockBoundingSphere.Center += rockPos[j];
-                            rockBoundingSphere.Radius *= 220.0f;
+                            rockBoundingSphere.Radius *= 2.0f*rockScale[j];
 
                             DebugShapeRenderer.AddBoundingSphere(rockBoundingSphere, Color.Yellow);
 
@@ -544,12 +554,15 @@ namespace GameStateManagementSample
                                 //s.ReverseVelocity();
                                 s.BackUp();
                                 s.ReverseVelocity();
-                                s.shipHealth -= 5;
+                                otherS.shipHealth -= 5;
+                                soundBank.GetCue("Boing").Play();
                             }
                         //}
                     }
                 }
+
             }
+
             ////BoundingBox bb = new BoundingBox(new Vector3(s.Position.X - 650, s.Position.Y - 200, s.Position.Z - 1200), new Vector3(s.Position.X + 650, s.Position.Y + 200, s.Position.Z + 700));
             //BoundingSphere shipBS = shipModel.Meshes[0].BoundingSphere;
             //shipBS.Center = s.Position;
@@ -576,7 +589,39 @@ namespace GameStateManagementSample
             //    }
             //}
         }
+        public void BulletCollision(ShipBullet Sb)
+        {
+            for (int i = 0; i < bulletModel.Meshes.Count; i++)
+            {
+                BoundingSphere bulletBoundingSphere = bulletModel.Meshes[i].BoundingSphere;
+                bulletBoundingSphere.Center += Sb.Position;
+                bulletBoundingSphere.Radius *= 12.0f;
 
+                DebugShapeRenderer.AddBoundingSphere(bulletBoundingSphere, Color.Pink);
+
+                for (int j = 0; j < rockPos.Length; j++)
+                {
+                    if (Vector3.Distance(rockPos[j], Sb.Position) <= 50000)
+                    {
+                        //for (int k = 0; k < rockModel.Meshes.Count; k++)
+                        //{
+                        BoundingSphere rockBoundingSphere = rockModel.Meshes[0].BoundingSphere;
+                        rockBoundingSphere.Center += rockPos[j];
+                        rockBoundingSphere.Radius *= 220.0f;
+
+                        DebugShapeRenderer.AddBoundingSphere(rockBoundingSphere, Color.Yellow);
+
+                        if (bulletBoundingSphere.Intersects(rockBoundingSphere))
+                        {
+                            //Pos for not drawing
+                            //rockPos[j] = new Vector3(123, 123, 123);
+                            Sb.Reset();
+                        }
+                        //}
+                    }
+                }
+            }
+        }
         /// <summary>
         /// Lets the game respond to player input. Unlike the Update method,
         /// this will only be called when the gameplay screen is active.
@@ -706,11 +751,14 @@ namespace GameStateManagementSample
             ScreenManager.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             for (int i = 0; i < rockPos.Length; i++)
             {
-                DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera);
+                if (Vector3.Distance(ship1Pos, rockPos[i]) < 10000000)
+                {
+                    DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera);
+                }
             }
 
             DrawModel(indicatorModel, Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * Matrix.CreateScale(10) * Matrix.CreateFromYawPitchRoll(ship1IndicatorHPR.X, ship1IndicatorHPR.Y, ship1IndicatorHPR.Z) * Matrix.CreateTranslation(ship1IndicatorPos), camera);
-            DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera);
+            DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.CreateTranslation(camera.Position), camera);
 
 
             
@@ -734,8 +782,10 @@ namespace GameStateManagementSample
 
             for (int i = 0; i < rockPos.Length; i++)
             {
-                if(Vector3.Distance(ship2Pos,rockPos[i])<10000000)
-                    DrawModel(rockModel, Matrix.CreateScale(rockScale[i])* Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera2);
+                if (Vector3.Distance(ship2Pos, rockPos[i]) < 10000000)
+                {
+                    DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera2);
+                }
             }
 
             for (int i = 0; i < ship2.bullets.Length; i++)
@@ -772,7 +822,7 @@ namespace GameStateManagementSample
             }
 
             DrawModel(indicatorModel, Matrix.CreateRotationY(MathHelper.ToRadians(90.0f)) * Matrix.CreateScale(10) * Matrix.CreateFromYawPitchRoll(ship2IndicatorHPR.X, ship2IndicatorHPR.Y, ship2IndicatorHPR.Z) * Matrix.CreateTranslation(ship2IndicatorPos), camera2);
-            DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.Identity, camera2);
+            DrawModel(skyBoxModel, Matrix.CreateScale(10000) * Matrix.CreateTranslation(camera2.Position), camera2);
 
             //DrawModel(rockModel, Matrix.CreateScale(100) * Matrix.Identity, camera2);
             //DrawModel(groundModel, Matrix.Identity, camera2);
@@ -795,6 +845,7 @@ namespace GameStateManagementSample
             //particleEffect.Draw(ScreenManager.GraphicsDevice, camera.View, camera.Projection);
 
             spriteBatch.Begin();
+            //spriteBatch.DrawString(gameFont, ship.Position.ToString(), new Vector2(50, 50), Color.White);
             spriteBatch.Draw(TLifeBarBar, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, (int)ship2.shipHealth * 2, 50), new Rectangle(0, 0, (int)ship2.shipHealth * 2, 50), Color.White);
             spriteBatch.Draw(TLifeBarFrame, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, 200, 50), Color.White);
             
@@ -806,6 +857,7 @@ namespace GameStateManagementSample
             //particleEffect.Draw(ScreenManager.GraphicsDevice, camera2.View, camera2.Projection);
 
             spriteBatch.Begin();
+            //spriteBatch.DrawString(gameFont, ship2.Position.ToString(), new Vector2(50, 50), Color.White);
             spriteBatch.Draw(TLifeBarBar, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40,(int)ship.shipHealth * 2, 50), new Rectangle(0, 0, (int)ship.shipHealth * 2, 50), Color.White);
             spriteBatch.Draw(TLifeBarFrame, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, 200, 50), Color.White);
             
