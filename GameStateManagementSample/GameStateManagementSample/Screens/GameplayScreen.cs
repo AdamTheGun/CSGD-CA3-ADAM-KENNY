@@ -20,6 +20,7 @@ using ChaseCameraSample;
 using BloomPostprocess;
 using Particles.Particles;
 using System.Collections.Generic;
+using ShapeRenderingSample;
 #endregion
 
 namespace GameStateManagementSample
@@ -153,6 +154,8 @@ namespace GameStateManagementSample
                 if (content == null)
                     content = new ContentManager(ScreenManager.Game.Services, "Content");
 
+                DebugShapeRenderer.Initialize(ScreenManager.GraphicsDevice);
+
                 topViewport = ScreenManager.GraphicsDevice.Viewport;
                 bottomViewport = ScreenManager.GraphicsDevice.Viewport;
 
@@ -269,8 +272,8 @@ namespace GameStateManagementSample
                 FxCue = soundBank.GetCue("ShotFx");
                 ScreenManager.MusicCue = soundBank.GetCue("GameMusic");
 
-                ship1Pos = new Vector3(10000,350,10000);
-                ship2Pos = new Vector3(100, 350, 100);
+                ship1Pos = new Vector3(10000, 350, 10000);
+                ship2Pos = new Vector3(-10000, 350, 10000);
 
                 // Create ship
                 ship = new Ship(ScreenManager.GraphicsDevice,ship1Pos,soundBank,shipEmit1,shipEmit2,shipListen1);
@@ -325,7 +328,6 @@ namespace GameStateManagementSample
 
             base.Deactivate();
         }
-
 
         /// <summary>
         /// Unload graphics content used by the game.
@@ -478,6 +480,8 @@ namespace GameStateManagementSample
                 ship.Update(gameTime, shipModel, cubeModel,bulletModel,ship2.World,2);
                 ship2.Update(gameTime, shipModel, cubeModel, bulletModel, ship.World,1);
 
+                AsteroidCollision(ship);
+                AsteroidCollision(ship2);
 
                 // Update the camera to chase the new target
                 UpdateCameraChaseTarget(ship,camera);
@@ -513,6 +517,65 @@ namespace GameStateManagementSample
             ScreenManager.AudioEngine.Update();
         }
 
+        public void AsteroidCollision(Ship s)
+        {
+            for (int i = 0; i < shipModel.Meshes.Count; i++)
+            {
+                BoundingSphere shipBoundingSphere = shipModel.Meshes[i].BoundingSphere;
+                shipBoundingSphere.Center += s.Position;
+                shipBoundingSphere.Radius *= 12.0f;
+
+                DebugShapeRenderer.AddBoundingSphere(shipBoundingSphere, Color.Red);
+
+                for (int j = 0; j < rockPos.Length; j++)
+                {
+                    if (Vector3.Distance(rockPos[j], s.Position) <= 50000)
+                    {
+                        //for (int k = 0; k < rockModel.Meshes.Count; k++)
+                        //{
+                            BoundingSphere rockBoundingSphere = rockModel.Meshes[0].BoundingSphere;
+                            rockBoundingSphere.Center += rockPos[j];
+                            rockBoundingSphere.Radius *= 220.0f;
+
+                            DebugShapeRenderer.AddBoundingSphere(rockBoundingSphere, Color.Yellow);
+
+                            if (shipBoundingSphere.Intersects(rockBoundingSphere))
+                            {
+                                //s.ReverseVelocity();
+                                s.BackUp();
+                                s.ReverseVelocity();
+                                s.shipHealth -= 5;
+                            }
+                        //}
+                    }
+                }
+            }
+            ////BoundingBox bb = new BoundingBox(new Vector3(s.Position.X - 650, s.Position.Y - 200, s.Position.Z - 1200), new Vector3(s.Position.X + 650, s.Position.Y + 200, s.Position.Z + 700));
+            //BoundingSphere shipBS = shipModel.Meshes[0].BoundingSphere;
+            //shipBS.Center = s.Position;
+            //shipBS.Radius *= 15.0f;
+
+            ////DebugShapeRenderer.AddBoundingBox(bb, Color.Red);
+            //DebugShapeRenderer.AddBoundingSphere(shipBS, Color.Red);
+
+            //for (int r = 0; r < rockPos.Length; r++)
+            //{
+            //    BoundingSphere bs = rockModel.Meshes[0].BoundingSphere;
+            //    bs.Center = rockPos[r];
+            //    bs.Radius *= 150.0f;
+
+            //    if(Vector3.Distance(rockPos[r], s.Position) <= 50000)
+            //        DebugShapeRenderer.AddBoundingSphere(bs, Color.Yellow);
+
+            //    if (shipBS.Intersects(bs))
+            //    {
+            //        s.ReverseVelocity();
+            //        s.BackUp();
+            //        s.ReverseVelocity();
+            //        return;
+            //    }
+            //}
+        }
 
         /// <summary>
         /// Lets the game respond to player input. Unlike the Update method,
@@ -750,6 +813,8 @@ namespace GameStateManagementSample
             //spriteBatch.DrawString(gameFont, "Power  : " + (ship2.bullets.Length - ship2.currentBullet), new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width - 200, 40), Color.White);
             spriteBatch.End();
             #endregion
+
+            DebugShapeRenderer.Draw(gameTime, camera2.View, camera2.Projection);
         }
 
         private void DrawModel(Model model, Matrix world, EnvironmentMapEffect be, ChaseCamera camera)

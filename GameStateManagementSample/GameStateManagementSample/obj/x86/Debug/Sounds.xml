@@ -10,8 +10,8 @@
     Streaming = 1;
     Seek Tables = 1;
     Compression Preset Name = &lt;none&gt;;
-    Bank Last Revised Low = 1664566721;
-    Bank Last Revised High = 30423922;
+    Bank Last Revised Low = 2332641707;
+    Bank Last Revised High = 30427566;
 
     Wave
     {
@@ -224,6 +224,29 @@
             File Type = 1;
             Last Modified Low = 3362688256;
             Last Modified High = 30005739;
+        }
+    }
+
+    Wave
+    {
+        Name = Metal_Hit;
+        File = Sounds\Metal_Hit.wav;
+        Build Settings Last Modified Low = 2253318774;
+        Build Settings Last Modified High = 30427566;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 73492;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1869092401;
+            Last Modified High = 30427566;
         }
     }
 }

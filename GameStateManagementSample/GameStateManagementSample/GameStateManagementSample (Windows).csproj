@@ -68,6 +68,7 @@
     <Compile Include="BloomComponent.cs" />
     <Compile Include="BloomSettings.cs" />
     <Compile Include="ChaseCamera.cs" />
+    <Compile Include="DebugShapeRenderer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Particles\Modifiers\AlphaAgeModifier.cs" />
     <Compile Include="Particles\Modifiers\FrictionModifier.cs" />

@@ -200,7 +200,15 @@ namespace ChaseCameraSample
                 mouseState.Y >= 2 * graphicsDevice.Viewport.Height / 3;
         }
 
-        
+        public void BackUp()
+        {
+            Position = oldPos;
+        }
+
+        public void ReverseVelocity()
+        {
+            Velocity -= Velocity * 10;
+        }
 
         /// <summary>
         /// Applies a simple rotation to the ship and animates position based
@@ -215,9 +223,6 @@ namespace ChaseCameraSample
 
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            
-
-            
             // Determine rotation amount from input
             Vector2 rotationAmount = new Vector2(0.0f,0.0f);
             if (playerNum == 2)
