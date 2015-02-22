@@ -78,7 +78,7 @@ namespace GameStateManagementSample
                 new Keys[] { Keys.Down },
                 true);
             menuSelect = new InputAction(
-                new Buttons[] { Buttons.A },
+                new Buttons[] { Buttons.A , Buttons.Start},
                 new Keys[] { Keys.Enter, Keys.Space },
                 true);
             menuCancel = new InputAction(

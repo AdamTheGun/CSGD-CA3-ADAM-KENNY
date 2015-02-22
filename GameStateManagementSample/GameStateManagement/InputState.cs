@@ -188,7 +188,7 @@ namespace GameStateManagement
                         LastGamePadStates[i].IsButtonUp(button));
             }
             else
-            {
+            {   
                 // Accept input from any player.
                 return (IsNewButtonPress(button, PlayerIndex.One, out playerIndex) ||
                         IsNewButtonPress(button, PlayerIndex.Two, out playerIndex) ||

@@ -183,6 +183,13 @@ namespace GameStateManagement
         }
 
 
+        int winner;
+        public int Winner
+        {
+            get { return winner; }
+            set { winner = value; }
+        }
+
 
         /// <summary>
         /// Gets a blank texture that can be used by the screens.
@@ -259,13 +266,15 @@ namespace GameStateManagement
             Menufont = content.Load<SpriteFont>("menuFont");
 
             blankTexture = content.Load<Texture2D>("blank");
-            screenInCounter = 0;
+            screenInCounter = -1;
             originalViewport = GraphicsDevice.Viewport;
             shipchosenBool1 = false;
             shipchosenBool2 = false;
             currentShipChoosing = 1;
             mainMenu = soundBank.GetCue("MainMenu");
             mainMenu.Play();
+            
+            winner = -0;
             // Tell each of the screens to load their content.
             foreach (GameScreen screen in screens)
             {

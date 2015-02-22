@@ -30,6 +30,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Green.jpg">
+      <Name>Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="HealthBall.FBX">
+      <Name>HealthBall</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <Compile Include="menufont.spritefont">
       <Name>menufont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -272,6 +282,34 @@
     </Compile>
     <Compile Include="LifeBarFrame.png">
       <Name>LifeBarFrame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HealthBallTex.jpg">
+      <Name>HealthBallTex</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arrow.FBX">
+      <Name>Arrow</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BigFont.spritefont">
+      <Name>BigFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StartScreen.jpg">
+      <Name>StartScreen</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

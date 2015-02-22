@@ -76,7 +76,7 @@ namespace GameStateManagementSample
 #if WINDOWS_PHONE
             screenManager.AddScreen(new PhoneMainMenuScreen(), null);
 #else
-            screenManager.AddScreen(new MainMenuScreen(screenManager.SoundBank), null);
+            screenManager.AddScreen(new StartScreen(screenManager.SoundBank), null);
 #endif
         }
 

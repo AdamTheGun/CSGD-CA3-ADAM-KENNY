@@ -68,7 +68,6 @@
     <Compile Include="BloomComponent.cs" />
     <Compile Include="BloomSettings.cs" />
     <Compile Include="ChaseCamera.cs" />
-    <Compile Include="DebugShapeRenderer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Particles\Modifiers\AlphaAgeModifier.cs" />
     <Compile Include="Particles\Modifiers\FrictionModifier.cs" />
@@ -81,6 +80,7 @@
     <Compile Include="Screens\BackgroundScreen.cs" />
     <Compile Include="Screens\CharacterMenuScreen.cs" />
     <Compile Include="Screens\ControlsMenuScreen.cs" />
+    <Compile Include="Screens\StartScreen.cs" />
     <Compile Include="Screens\CreditsMenuScreen.cs" />
     <Compile Include="Screens\GameOverScreen.cs" />
     <Compile Include="Screens\GameplayScreen.cs" />

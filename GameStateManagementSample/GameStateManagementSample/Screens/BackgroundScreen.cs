@@ -33,6 +33,7 @@ namespace GameStateManagementSample
         Texture2D creditsBackground;
         Texture2D Ship1Background;
         Texture2D Ship2Background;
+        Texture2D StartBackground;
 
         #endregion
 
@@ -69,6 +70,7 @@ namespace GameStateManagementSample
                 Ship2Background = content.Load<Texture2D>("Ship2Screen");
                 creditsBackground = content.Load<Texture2D>("CREDITS");
                 controlsBackground = content.Load<Texture2D>("Controls");
+                StartBackground = content.Load<Texture2D>("StartScreen");
             }
         }
 
@@ -97,7 +99,11 @@ namespace GameStateManagementSample
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
         {
-            
+
+            if (ScreenManager.ScreenInCounter == -1)
+            {
+                backgroundTexture = StartBackground;
+            }
 
             if (ScreenManager.ScreenInCounter == 3)
             {

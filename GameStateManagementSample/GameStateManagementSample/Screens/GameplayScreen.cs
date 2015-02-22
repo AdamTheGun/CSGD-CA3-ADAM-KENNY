@@ -20,14 +20,15 @@ using ChaseCameraSample;
 using BloomPostprocess;
 using Particles.Particles;
 using System.Collections.Generic;
-using ShapeRenderingSample;
 #endregion
 
 namespace GameStateManagementSample
 {
+    /***************************************************
     // NOTE TO DEVELOPERS
     // BOTTOM VIEWPORT USES CAMERA and ship
     // TOP VIEWPORT USES CAMERA2 and ship2
+    ****************************************************/
 
     /// <summary>
     /// This screen implements the actual game logic. It is just a
@@ -39,7 +40,7 @@ namespace GameStateManagementSample
         #region Fields
 
         ContentManager content;
-        SpriteFont gameFont;
+        SpriteFont gameFont,BigFont;
 
         BloomComponent bloom;
         
@@ -73,6 +74,8 @@ namespace GameStateManagementSample
         Vector3[] rockPos = new Vector3[800];
         int[] rockScale = new int[800];
         int[] rockRotation = new int[800];
+        float[] rockHealth = new float[800];
+        bool[] rockBool = new bool[800];
 
         //AUDIO STUFF
         AudioEmitter shipEmit1, shipEmit2;
@@ -92,6 +95,7 @@ namespace GameStateManagementSample
         Model cubeModel;
         Model bulletModel;
         Model indicatorModel;
+        Model HealthBallModel;
         
         bool cameraSpringEnabled = true;
         bool camera2SpringEnabled = true;
@@ -154,7 +158,7 @@ namespace GameStateManagementSample
                 if (content == null)
                     content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-                DebugShapeRenderer.Initialize(ScreenManager.GraphicsDevice);
+                //DebugShapeRenderer.Initialize(ScreenManager.GraphicsDevice);
 
                 topViewport = ScreenManager.GraphicsDevice.Viewport;
                 bottomViewport = ScreenManager.GraphicsDevice.Viewport;
@@ -192,12 +196,14 @@ namespace GameStateManagementSample
                 rockModel = content.Load<Model>("Rock");
                 shipModel = content.Load<Model>("SpaceShip1");
                 shipModel2 = content.Load<Model>("SpaceShip2");
+                HealthBallModel = content.Load<Model>("HealthBall");
                 cubeModel = content.Load<Model>("cube");
                 bulletModel = content.Load<Model>("Cone");
                 skyBoxModel = content.Load<Model>("Space_SkyBox");
-                indicatorModel = content.Load<Model>("Cone");
+                indicatorModel = content.Load<Model>("Arrow");
                 TLifeBarBar = content.Load<Texture2D>("LifeBarBar");
                 TLifeBarFrame = content.Load<Texture2D>("LifeBarFrame");
+                BigFont = content.Load<SpriteFont>("BigFont");
 
                 audioEngine = ScreenManager.AudioEngine;
                 soundBank = ScreenManager.SoundBank;
@@ -247,6 +253,7 @@ namespace GameStateManagementSample
                     envEffect2.Texture.GetData<Color>(facedata2);
                     textureCube2.SetData<Color>((CubeMapFace)i, facedata2);
                 }
+
                 envEffect2.Texture = (shipModel2.Meshes[0].Effects[0] as EnvironmentMapEffect).Texture;
                 envEffect2.EnvironmentMap = textureCube2;
                 envEffect2.EnableDefaultLighting();
@@ -272,8 +279,8 @@ namespace GameStateManagementSample
                 FxCue = soundBank.GetCue("ShotFx");
                 ScreenManager.MusicCue = soundBank.GetCue("GameMusic");
 
-                ship1Pos = new Vector3(10000, 350, 10000);
-                ship2Pos = new Vector3(-10000, 350, 10000);
+                ship1Pos = new Vector3(100000, 350, 10000);
+                ship2Pos = new Vector3(-100000, 350, 10000);
 
                 // Create ship
                 ship = new Ship(ScreenManager.GraphicsDevice,ship1Pos,soundBank,shipEmit1,shipEmit2,shipListen1);
@@ -518,7 +525,14 @@ namespace GameStateManagementSample
                     ScreenManager.MainMenu = ScreenManager.SoundBank.GetCue("WinMusic");
                     ScreenManager.MainMenu.Play();
                     ScreenManager.AddScreen(new GameOverScreen(ScreenManager.SoundBank), PlayerIndex.One);
-
+                    if (ship.shipHealth <= 0)
+                    {
+                        ScreenManager.Winner = 1;
+                    }
+                    else 
+                    {
+                        ScreenManager.Winner = 2;
+                    }
                     GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
                     GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
                 }
@@ -535,34 +549,47 @@ namespace GameStateManagementSample
                 shipBoundingSphere.Center += s.Position;
                 shipBoundingSphere.Radius *= 12.0f;
 
-                DebugShapeRenderer.AddBoundingSphere(shipBoundingSphere, Color.Red);
+                //DebugShapeRenderer.AddBoundingSphere(shipBoundingSphere, Color.Red);
 
                 for (int j = 0; j < rockPos.Length; j++)
                 {
-                    if (Vector3.Distance(rockPos[j], s.Position) <= 50000)
+                    if (rockBool[j] == false)
                     {
-                        //for (int k = 0; k < rockModel.Meshes.Count; k++)
-                        //{
+                        if (Vector3.Distance(rockPos[j], s.Position) <= 50000)
+                        {
                             BoundingSphere rockBoundingSphere = rockModel.Meshes[0].BoundingSphere;
                             rockBoundingSphere.Center += rockPos[j];
-                            rockBoundingSphere.Radius *= 2.0f*rockScale[j];
+                            rockBoundingSphere.Radius *= 2.0f * rockScale[j];
 
-                            DebugShapeRenderer.AddBoundingSphere(rockBoundingSphere, Color.Yellow);
+                            //DebugShapeRenderer.AddBoundingSphere(rockBoundingSphere, Color.Yellow);
 
                             if (shipBoundingSphere.Intersects(rockBoundingSphere))
                             {
                                 //s.ReverseVelocity();
-                                s.BackUp();
-                                s.ReverseVelocity();
-                                otherS.shipHealth -= 5;
-                                soundBank.GetCue("Boing").Play();
+                                if (rockHealth[j] > 0)
+                                {
+                                    rockHealth[j] -= 5f;
+                                    s.BackUp();
+                                    s.ReverseVelocity();
+                                    otherS.shipHealth -= 5;
+                                    soundBank.GetCue("Boing").Play();
+                                }
+                                else
+                                {
+                                    rockBool[j] = true;
+                                    otherS.shipHealth += 10;
+                                    soundBank.GetCue("HealthPickUp").Play();
+                                    if (otherS.shipHealth > 100)
+                                    {
+                                        otherS.shipHealth = 100;
+                                    }
+                                }
                             }
-                        //}
+                        }
                     }
                 }
-
+           
             }
-
             ////BoundingBox bb = new BoundingBox(new Vector3(s.Position.X - 650, s.Position.Y - 200, s.Position.Z - 1200), new Vector3(s.Position.X + 650, s.Position.Y + 200, s.Position.Z + 700));
             //BoundingSphere shipBS = shipModel.Meshes[0].BoundingSphere;
             //shipBS.Center = s.Position;
@@ -597,27 +624,30 @@ namespace GameStateManagementSample
                 bulletBoundingSphere.Center += Sb.Position;
                 bulletBoundingSphere.Radius *= 12.0f;
 
-                DebugShapeRenderer.AddBoundingSphere(bulletBoundingSphere, Color.Pink);
+                //DebugShapeRenderer.AddBoundingSphere(bulletBoundingSphere, Color.Pink);
 
                 for (int j = 0; j < rockPos.Length; j++)
                 {
-                    if (Vector3.Distance(rockPos[j], Sb.Position) <= 50000)
+                    if (rockBool[j] == false)
                     {
-                        //for (int k = 0; k < rockModel.Meshes.Count; k++)
-                        //{
-                        BoundingSphere rockBoundingSphere = rockModel.Meshes[0].BoundingSphere;
-                        rockBoundingSphere.Center += rockPos[j];
-                        rockBoundingSphere.Radius *= 220.0f;
-
-                        DebugShapeRenderer.AddBoundingSphere(rockBoundingSphere, Color.Yellow);
-
-                        if (bulletBoundingSphere.Intersects(rockBoundingSphere))
+                        if (Vector3.Distance(rockPos[j], Sb.Position) <= 50000)
                         {
-                            //Pos for not drawing
-                            //rockPos[j] = new Vector3(123, 123, 123);
-                            Sb.Reset();
+                            //for (int k = 0; k < rockModel.Meshes.Count; k++)
+                            //{
+                            BoundingSphere rockBoundingSphere = rockModel.Meshes[0].BoundingSphere;
+                            rockBoundingSphere.Center += rockPos[j];
+                            rockBoundingSphere.Radius *= 220.0f;
+
+                            
+                            if (bulletBoundingSphere.Intersects(rockBoundingSphere))
+                            {
+                                //Pos for not drawing
+                                //rockPos[j] = new Vector3(123, 123, 123);
+                                rockHealth[j] -= 1f;
+                                Sb.Reset();
+                            }
+                            //}
                         }
-                        //}
                     }
                 }
             }
@@ -751,9 +781,22 @@ namespace GameStateManagementSample
             ScreenManager.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             for (int i = 0; i < rockPos.Length; i++)
             {
-                if (Vector3.Distance(ship1Pos, rockPos[i]) < 10000000)
+                if (rockHealth[i] > 0)
                 {
-                    DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera);
+                    if (Vector3.Distance(ship1Pos, rockPos[i]) < 10000000)
+                    {
+                        DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera);
+                    }
+                }
+                else if (rockHealth[i] <= 0) 
+                {
+                    if (rockBool[i] == false)
+                    {
+                        if (Vector3.Distance(ship1Pos, rockPos[i]) < 10000000)
+                        {
+                            DrawModel(HealthBallModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera);
+                        }
+                    }
                 }
             }
 
@@ -782,9 +825,22 @@ namespace GameStateManagementSample
 
             for (int i = 0; i < rockPos.Length; i++)
             {
-                if (Vector3.Distance(ship2Pos, rockPos[i]) < 10000000)
+                if(rockHealth[i]>0)
                 {
-                    DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera2);
+                    if (Vector3.Distance(ship2Pos, rockPos[i]) < 10000000)
+                    {
+                        DrawModel(rockModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera2);
+                    }
+                }
+                else if (rockHealth[i] <= 0) 
+                {
+                    if (rockBool[i] == false)
+                    {
+                        if (Vector3.Distance(ship2Pos, rockPos[i]) < 10000000)
+                        {
+                            DrawModel(HealthBallModel, Matrix.CreateScale(rockScale[i]) * Matrix.CreateRotationY(MathHelper.ToRadians(rockRotation[i])) * Matrix.CreateTranslation(rockPos[i]), camera2);
+                        }
+                    }
                 }
             }
 
@@ -846,6 +902,14 @@ namespace GameStateManagementSample
 
             spriteBatch.Begin();
             //spriteBatch.DrawString(gameFont, ship.Position.ToString(), new Vector2(50, 50), Color.White);
+            if (ScreenManager.Winner == 2)
+            {
+                spriteBatch.DrawString(BigFont, "YOU LOSE", new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width / 2 - (BigFont.MeasureString("YOU LOSE").X / 2), ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Height / 2 - (BigFont.MeasureString("YOU LOSE").Y / 2)+100), Color.White);
+            }
+            else if (ScreenManager.Winner == 1)
+            {
+                spriteBatch.DrawString(BigFont, "YOU WIN", new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width / 2 - (BigFont.MeasureString("YOU WIN").X / 2), ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Height / 2 - (BigFont.MeasureString("YOU WIN").Y / 2) + 100), Color.White);
+            }
             spriteBatch.Draw(TLifeBarBar, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, (int)ship2.shipHealth * 2, 50), new Rectangle(0, 0, (int)ship2.shipHealth * 2, 50), Color.White);
             spriteBatch.Draw(TLifeBarFrame, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, 200, 50), Color.White);
             
@@ -857,6 +921,14 @@ namespace GameStateManagementSample
             //particleEffect.Draw(ScreenManager.GraphicsDevice, camera2.View, camera2.Projection);
 
             spriteBatch.Begin();
+            if (ScreenManager.Winner == 1)
+            {
+                spriteBatch.DrawString(BigFont, "YOU LOSE", new Vector2((ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width / 2) - (BigFont.MeasureString("YOU LOSE").X / 2), ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Height / 2 - (BigFont.MeasureString("YOU LOSE").Y / 2) + 100), Color.White);
+            }
+            else if (ScreenManager.Winner == 2)
+            {
+                spriteBatch.DrawString(BigFont, "YOU WIN", new Vector2(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Width / 2 - (BigFont.MeasureString("YOU WIN").X / 2), ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.Height / 2 - (BigFont.MeasureString("YOU WIN").Y / 2) + 100), Color.White);
+            }
             //spriteBatch.DrawString(gameFont, ship2.Position.ToString(), new Vector2(50, 50), Color.White);
             spriteBatch.Draw(TLifeBarBar, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40,(int)ship.shipHealth * 2, 50), new Rectangle(0, 0, (int)ship.shipHealth * 2, 50), Color.White);
             spriteBatch.Draw(TLifeBarFrame, new Rectangle(ScreenManager.GraphicsDevice.Viewport.TitleSafeArea.X + 50, 40, 200, 50), Color.White);
@@ -866,7 +938,7 @@ namespace GameStateManagementSample
             spriteBatch.End();
             #endregion
 
-            DebugShapeRenderer.Draw(gameTime, camera2.View, camera2.Projection);
+            //DebugShapeRenderer.Draw(gameTime, camera2.View, camera2.Projection);
         }
 
         private void DrawModel(Model model, Matrix world, EnvironmentMapEffect be, ChaseCamera camera)
@@ -982,6 +1054,8 @@ namespace GameStateManagementSample
                 rockPos[i] = new Vector3(randX, randY, randZ);
                 rockScale[i] = random.Next(10, 200);
                 rockRotation[i] = random.Next(0, 359);
+                rockHealth[i] = 10f;
+                rockBool[i] = false;
             }
         }
         #endregion

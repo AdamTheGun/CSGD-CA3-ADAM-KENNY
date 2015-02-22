@@ -77,6 +77,7 @@ namespace GameStateManagementSample
             ScreenManager.MainMenu.Stop(AudioStopOptions.Immediate);
             ScreenManager.MainMenu = ScreenManager.SoundBank.GetCue("MainMenu");
             ScreenManager.MainMenu.Play();
+            ScreenManager.Winner = -1;
             ScreenManager.ScreenInCounter = 0;
             LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
                                                            new MainMenuScreen(ScreenManager.SoundBank));
@@ -85,7 +86,7 @@ namespace GameStateManagementSample
         void OnRestart(object sender, PlayerIndexEventArgs e)
         {
            // ScreenManager.SoundBank.GetCue("UI Click").Play();
-
+            ScreenManager.Winner = -1;
             ScreenManager.MainMenu.Stop(AudioStopOptions.Immediate);
             LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
                                    new GameplayScreen());

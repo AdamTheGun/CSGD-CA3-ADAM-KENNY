@@ -66,7 +66,6 @@
     <Compile Include="BloomComponent.cs" />
     <Compile Include="BloomSettings.cs" />
     <Compile Include="ChaseCamera.cs" />
-    <Compile Include="DebugShapeRenderer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Particles\Modifiers\AlphaAgeModifier.cs" />
     <Compile Include="Particles\Modifiers\FrictionModifier.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="Screens\OptionsMenuScreen.cs" />
     <Compile Include="Screens\PauseMenuScreen.cs" />
     <Compile Include="Screens\PlayerIndexEventArgs.cs" />
+    <Compile Include="Screens\StartScreen.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="ShipBullet.cs" />
     <Compile Include="TextureQuad.cs" />

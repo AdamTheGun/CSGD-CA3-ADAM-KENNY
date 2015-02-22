@@ -296,6 +296,7 @@ namespace ChaseCameraSample
             else if (playerNum == 1)
             {
                 thrustAmount = gamePadState1.Triggers.Right;
+                
                 if (randNum <= 0.5f)
                 {
                     if (gamePadState1.Buttons.X == ButtonState.Pressed)
